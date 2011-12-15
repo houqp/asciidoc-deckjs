@@ -1,0 +1,154 @@
+deck.js Support for Asciidoc
+=============================
+:author: Qingping Hou 
+:email: <dave2008713@gmail.com>
+:description: an example for writing deck.js presentation with asciidoc
+:revdate: 2011-12-16
+:revnumber: 0.1
+///////////////////////
+themes that you can choose includes:
+web-2.0, swiss, neon
+///////////////////////
+:deckjs-theme: neon
+///////////////////////
+transitions that you can choose includes:
+fade, horizontal-slide, vertical-slide
+///////////////////////
+:deckjs-transition: vertical-slide
+
+
+== What is deck.js?
+
+*deck.js* is a JavaScript library for building modern HTML
+presentations. *deck.js* is flexible enough to let advanced CSS
+and JavaScript authors craft highly customized decks, but also
+provides templates and themes for the HTML novice to build a
+standard slideshow.
+
+== How to generate deck.js with Asciidoc
+
+It's just as simple as issusing following command:
+
+...........................................
+asciidoc -f deck.js.conf file.asciidoc
+...........................................
+
+
+== Shortcuts
+Folloing are built-in deck.js shortcuts:
+
+* jump to any slide by given number, `g`.
+* preview all slides, `m`.
+
+
+== Syntax (basic)
+
+This part assumes that you are already familiar with some basic
+concepts in AsciiDoc.
+
+* slides are divided by *level 1* sections.
+* lists
+
+...........................................
+* entry1
+* entry2
+* entry3
+...........................................
+
+* you can choose theme and transition effect by specifying the *deckjs-theme* and *deckjs-transition* attributes:
+
+...........................................
+:deckjs-theme: neon
+:deckjs-transition: vertical-slide
+...........................................
+
+
+//////////////////////////////////////////////////////
+* ordered list
+
+...........................................
+1. entry1
+1. entry2
+1. entry3
+...........................................
+
+A complete guide for lists can be found at http://www.methods.co.nz/asciidoc/userguide.html#X64[this page]
+//////////////////////////////////////////////////////
+
+== Syntax (nested slide)
+
+Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements marked by *incrementa* option will be paused before show up.
+
+syntax:
+
+...........................................
+[options="incremental"]
+* this entry should be the first to show up
+* this entry should show up following the first one
+* this entry should be the last one
+...........................................
+
+effect:
+
+[options="incremental"]
+* this entry should be the first to show up
+* this entry should show up following the first one
+* this entry should be the last one 
+
+
+== Syntax (code block)
+syntax:
+
+...........................................
+  ...........................................
+  int swallow_redpill () {
+   unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
+   *((unsigned*)&rpill[3]) = (unsigned)m;
+   ((void(*)())&rpill)();
+   return (m[5]>0xd0) ? 1 : 0;
+  }
+  ...........................................
+...........................................
+
+effect:
+
+...........................................
+int swallow_redpill () {
+ unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
+ *((unsigned*)&rpill[3]) = (unsigned)m;
+ ((void(*)())&rpill)();
+ return (m[5]>0xd0) ? 1 : 0;
+}
+...........................................
+
+== Syntax (quote block)
+QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks[this page].
+
+syntax:
+
+...........................................
+  [quote, L. Kronecker]
+  ___________________________________________
+  God made the natural number and all the rest is the work of man
+  ___________________________________________
+...........................................
+
+effect:
+
+[quote, L. Kronecker]
+___________________________________________
+God made the natural number and all the rest is the work of man
+___________________________________________
+
+
+== Syntax (insert image)
+
+syntax:
+...........................................
+image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]
+...........................................
+
+effect:
+
+image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
+
