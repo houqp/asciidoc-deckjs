@@ -10,18 +10,19 @@ Dependencies
 * AsciiDoc
 * deck.js
 
+If you haven't download deck.js, you can download it using following command:
+
+```bash
+make isntall
+```
+
 
 Installation
 ------------
 
-No need to install, just make sure asciidoc can properly find deck.js.conf. For asciidoc's configuration file loading strategy, please refer to [this guide](http://www.methods.co.nz/asciidoc/userguide.html#X7).
+All you need to do is to make sure your asciidoc can properly find `deckjs.conf`. For asciidoc's configuration file loading strategy, please refer to [this guide](http://www.methods.co.nz/asciidoc/userguide.html#X7).
 
 The easiest way is to put `deckjs.conf` and the asciidoc file you wrote in the same directory.
-
-However, you can download `deckjs` by following command:
-```bash
-make isntall
-```
 
 
 Usage
