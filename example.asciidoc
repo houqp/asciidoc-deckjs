@@ -19,18 +19,17 @@ fade, horizontal-slide, vertical-slide
 
 == What is deck.js?
 
-*deck.js* is a JavaScript library for building modern HTML
-presentations. *deck.js* is flexible enough to let advanced CSS
-and JavaScript authors craft highly customized decks, but also
-provides templates and themes for the HTML novice to build a
-standard slideshow.
+*deck.js* is a JavaScript library for building modern HTML presentations. *deck.js* is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
+
+
+For more information, please check out its http://imakewebthings.github.com/deck.js/[Project page]
 
 == How to generate deck.js with Asciidoc
 
 It's just as simple as issusing following command:
 
 ...........................................
-asciidoc -f deck.js.conf file.asciidoc
+asciidoc -f deckjs.conf file.asciidoc
 ...........................................
 
 
