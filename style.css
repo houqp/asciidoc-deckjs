@@ -1,12 +1,6 @@
 body {
-	background-color:#222222;
-	color:#DDDDDD;
-}
-
-h1 {
-	text-align:center;
-	color:#AAFF00;
-	text-shadow: 2px 2px 20px #AAFF00;
+	background-color:#222;
+	color:#DDD;
 }
 
 a {
@@ -15,10 +9,35 @@ a {
 	text-shadow: 2px 2px 10px #00AAFF;
 }
 
-#main {
+.center_cls {
 	padding:1em 2em;
 	max-width:700px;
 	margin:0 auto;
 }
 
+#main {
+	border-bottom:3px dashed #666;
+}
+
+#main h1 {
+	text-align:center;
+	color:#AAFF00;
+	text-shadow: 2px 2px 20px #AAFF00;
+}
+
+#readme h1 {
+	color:#222;
+}
+
+#readme h1:before {
+	content:"ReadMe";
+	color:#DDD;
+}
+
+code {
+  padding:0.1em 0.2em;
+	font-size:0.6em;
+  background-color:#111;
+	color:#CCC;
+}
 

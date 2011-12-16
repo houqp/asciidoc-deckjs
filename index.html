@@ -10,7 +10,7 @@
     <img alt='Fork me on GitHub' class='github' src='http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position: absolute; top: 0; right: 0; border: 0;' />
   </a>
 
-  <section id="main">
+  <section id="main" class="center_cls">
 <h1>AsciiDoc-Deck.js</h1>
 
 <p>I have wrote an example for illustration. You can check it out at <a href="http://houqp.github.com/asciidoc-deckjs/example.html">this page</a>.</p>
@@ -19,6 +19,33 @@
 
 <p>I will write a more detailed document when I have time. :-(</p>
   </section>
+
+	<section id="readme" class="center_cls">
+<h1>Asciidoc-deck.js</h1>
+
+<p>An asciidoc backend for deck.js</p>
+
+<h2>Dependencies</h2>
+
+<ul>
+<li>AsciiDoc</li>
+<li>deck.js (already included in this repo)</li>
+</ul>
+
+<h2>Installation</h2>
+
+<p>All you need to do is to make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X7">this guide</a>.</p>
+
+<p>The easiest way is to put <code>deckjs.conf</code> and the asciidoc file you wrote in the same directory.</p>
+
+<h2>Usage</h2>
+
+<p><code>bash
+asciidoc -f deck.js.conf file.asciidoc
+</code></p>
+
+<p>file.asciidoc is the asciidoc file you wrote. </p>
+	</section>
 
 </body>
 </html>

@@ -10,9 +10,13 @@
     <img alt='Fork me on GitHub' class='github' src='http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position: absolute; top: 0; right: 0; border: 0;' />
   </a>
 
-  <section id="main">
+  <section id="main" class="center_cls">
 @main.md
   </section>
+
+	<section id="readme" class="center_cls">
+@README.md
+	</section>
 
 </body>
 </html>
