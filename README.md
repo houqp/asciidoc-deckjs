@@ -8,13 +8,7 @@ Dependencies
 ------------
 
 * AsciiDoc
-* deck.js
-
-If you haven't download deck.js, you can download it using following command:
-
-```bash
-make isntall
-```
+* deck.js (already included in this repo)
 
 
 Installation
