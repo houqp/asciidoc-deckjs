@@ -149,5 +149,6 @@ image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]
 
 effect:
 
+[options="incremental"]
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 
