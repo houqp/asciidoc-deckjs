@@ -22,7 +22,7 @@ fade, horizontal-slide, vertical-slide
 *deck.js* is a JavaScript library for building modern HTML presentations. *deck.js* is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
 
 
-For more information, please check out its http://imakewebthings.github.com/deck.js/[Project page]
+For more information, please check out its http://imakewebthings.github.com/deck.js/[Project page].
 
 == How to generate deck.js with Asciidoc
 
@@ -34,7 +34,7 @@ asciidoc -f deckjs.conf file.asciidoc
 
 
 == Shortcuts
-Folloing are built-in deck.js shortcuts:
+Folloing are built-in shortcuts in deck.js:
 
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
@@ -42,10 +42,15 @@ Folloing are built-in deck.js shortcuts:
 
 == Syntax (basic)
 
-This part assumes that you are already familiar with some basic
-concepts in AsciiDoc.
+This part assumes that you are already familiar with some basic concepts in AsciiDoc.
 
 * slides are divided by *level 1* sections.
+...........................................
+== Slide1 title
+
+say whatever you want here.
+...........................................
+
 * lists
 
 ...........................................
@@ -162,4 +167,10 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 effect:
 
 video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
+
+== The End
+
+That's all. Hope you enjoy this backend. :-)
+
+
 
