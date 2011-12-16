@@ -152,3 +152,14 @@ effect:
 [options="incremental"]
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 
+== Syntax (insert video)
+
+syntax:
+...........................................
+video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
+...........................................
+
+effect:
+
+video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
+
