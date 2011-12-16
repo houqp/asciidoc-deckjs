@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>deck.js Support for Asciidoc</title>
+
+  <meta name="description" content="an example for writing deck.js presentation with asciidoc" />
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <meta name="author" content="Qingping Hou" />
+  <meta name="generator" content="AsciiDoc 8.6.5" />
+  <meta name="presdate" content="2011-12-16" />
+  
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="deck.js/core/deck.core.css">
+  <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+
+  <!-- Theme CSS files -->
+  <link rel="stylesheet" href="./deck.js/themes/style/neon.css">
+  <link rel="stylesheet" id="transition-theme-link" href="./deck.js/themes/transition/vertical-slide.css">
+
+  <!-- Replace path with correct path to Modernizr file. -->
+  <script src="deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<section class="slide" id="title-slide">
+  <h1>deck.js Support for Asciidoc</h1>
+  <h3>Qingping Hou</h3>
+  <h4>2011-12-16</h4>
+</section>
+<section class="slide">
+<h2>What is deck.js?</h2>
+<p><strong>deck.js</strong> is a JavaScript library for building modern HTML presentations. <strong>deck.js</strong> is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.</p>
+<p>For more information, please check out its <a href="http://imakewebthings.github.com/deck.js/">Project page</a>.</p>
+</section>
+<section class="slide">
+<h2>How to generate deck.js with Asciidoc</h2>
+<p>It&#8217;s just as simple as issusing following command:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>asciidoc -f deckjs.conf file.asciidoc</tt></pre>
+</div></div>
+</section>
+<section class="slide">
+<h2>Shortcuts</h2>
+<p>Folloing are built-in shortcuts in deck.js:</p>
+<ul">
+<li>
+jump to any slide by given number, <tt>g</tt>.
+</li>
+<li>
+preview all slides, <tt>m</tt>.
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Syntax (basic)</h2>
+<p>This part assumes that you are already familiar with some basic concepts in AsciiDoc.</p>
+<ul">
+<li>
+slides are divided by <strong>level 1</strong> sections.
+</li>
+</ul>
+<div class="literalblock">
+<div class="content">
+<pre><tt>== Slide1 title
+
+say whatever you want here.</tt></pre>
+</div></div>
+<ul">
+<li>
+lists
+</li>
+</ul>
+<div class="literalblock">
+<div class="content">
+<pre><tt>* entry1
+* entry2
+* entry3</tt></pre>
+</div></div>
+<ul">
+<li>
+you can choose theme and transition effect by specifying the <strong>deckjs-theme</strong> and <strong>deckjs-transition</strong> attributes:
+</li>
+</ul>
+<div class="literalblock">
+<div class="content">
+<pre><tt>:deckjs-theme: neon
+:deckjs-transition: vertical-slide</tt></pre>
+</div></div>
+</section>
+<section class="slide">
+<h2>Syntax (nested slide)</h2>
+<p>Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements marked by <strong>incrementa</strong> option will be paused before show up.</p>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>[options="incremental"]
+* this entry should be the first to show up
+* this entry should show up following the first one
+* this entry should be the last one</tt></pre>
+</div></div>
+<p>effect:</p>
+<ul">
+<li class="slide">
+this entry should be the first to show up
+</li>
+<li class="slide">
+this entry should show up following the first one
+</li>
+<li class="slide">
+this entry should be the last one
+</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Syntax (code block)</h2>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>  ...........................................
+  int swallow_redpill () {
+   unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
+   *((unsigned*)&amp;rpill[3]) = (unsigned)m;
+   ((void(*)())&amp;rpill)();
+   return (m[5]&gt;0xd0) ? 1 : 0;
+  }
+  ...........................................</tt></pre>
+</div></div>
+<p>effect:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>int swallow_redpill () {
+ unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
+ *((unsigned*)&amp;rpill[3]) = (unsigned)m;
+ ((void(*)())&amp;rpill)();
+ return (m[5]&gt;0xd0) ? 1 : 0;
+}</tt></pre>
+</div></div>
+</section>
+<section class="slide">
+<h2>Syntax (quote block)</h2>
+<p>QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on <a href="http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks">this page</a>.</p>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>  [quote, L. Kronecker]
+  ___________________________________________
+  God made the natural number and all the rest is the work of man
+  ___________________________________________</tt></pre>
+</div></div>
+<p>effect:</p>
+<blockquote>
+  <p>God made the natural number and all the rest is the work of man</p>
+  <p><cite>-- L. Kronecker </cite></p>
+</blockquote>
+</section>
+<section class="slide">
+<h2>Syntax (insert image)</h2>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]</tt></pre>
+</div></div>
+<p>effect:</p>
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" alt="Levitating GNU" />
+</section>
+<section class="slide">
+<h2>Syntax (insert video)</h2>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]</tt></pre>
+</div></div>
+<p>effect:</p>
+<p>video::<a href="http://www.youtube.com/embed/GP3zvc2dG5Y">width="420", height="315"</a></p>
+</section>
+<section class="slide">
+<h2>The End</h2>
+<p>That&#8217;s all. Hope you enjoy this backend. :-)</p>
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="deck.js/jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+        $(function() {
+                $.deck('.slide');
+        });
+</script>
+</body>
+</html>
