@@ -1,5 +1,7 @@
 <html>
 <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
   <title>Hello world</title>
 </head>
 <body>
@@ -8,9 +10,9 @@
     <img alt='Fork me on GitHub' class='github' src='http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' style='position: absolute; top: 0; right: 0; border: 0;' />
   </a>
 
-  <article>
+  <section id="main">
 @main.md
-  </article>
+  </section>
 
 </body>
 </html>
