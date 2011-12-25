@@ -1,8 +1,6 @@
 AsciiDoc-Deck.js
 ================
 
-I have wrote an example for illustration. You can check it out at [this page](http://houqp.github.com/asciidoc-deckjs/example.html).
+I have wrote a tutorial-slide for illustration. You can check it out at [this page](./tutorial-slide.html). The source code of the tutorial-slide can be found [here](./tutorial-slide.asciidoc).
 
-The source code of the example can be found [here](http://houqp.github.com/asciidoc-deckjs/example.asciidoc).
-
-I will write a more detailed document when I have time. :-(
+Writing Deck.js slides with AsciiDoc is very simple, I suggest you get start with [this template](./example-template.asciidoc).

@@ -1,0 +1,38 @@
+deck.js Support for Asciidoc
+=============================
+:author: Foo Bar 
+:email: <foo@bar.org>
+:description: just a template file.
+:revdate: 2011-12-16
+:revnumber: 0.1
+///////////////////////
+Themes that you can choose includes:
+web-2.0, swiss, neon
+///////////////////////
+:deckjs_theme: web-2.0
+///////////////////////
+Transitions that you can choose includes:
+fade, horizontal-slide, vertical-slide
+///////////////////////
+:deckjs_transition: horizontal-slide
+///////////////////////
+AsciiDoc use `source-highlight` as default highlighter.
+
+Uncomment following two lines if you want to highlight your code with `Pygments`
+Styles avaliable for pygment highlighter:
+monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+///////////////////////
+//:pygments:
+//:pygments_sytle: native
+
+
+== Slide One
+
+[options="incremental"]
+ * item 1
+ * item 2
+
+== Slide Two
+
+That's all.
+

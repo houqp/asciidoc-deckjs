@@ -4,17 +4,26 @@ deck.js Support for Asciidoc
 :email: <dave2008713@gmail.com>
 :description: an example for writing deck.js presentation with asciidoc
 :revdate: 2011-12-16
-:revnumber: 0.1
+:revnumber: 1.0
 ///////////////////////
-themes that you can choose includes:
+Themes that you can choose includes:
 web-2.0, swiss, neon
 ///////////////////////
-:deckjs-theme: neon
+:deckjs_theme: neon
 ///////////////////////
-transitions that you can choose includes:
+Transitions that you can choose includes:
 fade, horizontal-slide, vertical-slide
 ///////////////////////
-:deckjs-transition: vertical-slide
+:deckjs_transition: vertical-slide
+///////////////////////
+AsciiDoc use `source-highlight` as default highlighter.
+
+Uncomment following two lines if you want to highlight your code with `Pygments`
+Styles avaliable for pygment highlighter:
+monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+///////////////////////
+:pygments:
+:pygments_sytle: native
 
 
 == What is deck.js?
@@ -62,8 +71,8 @@ say whatever you want here.
 * you can choose theme and transition effect by specifying the *deckjs-theme* and *deckjs-transition* attributes:
 
 ...........................................
-:deckjs-theme: neon
-:deckjs-transition: vertical-slide
+:deckjs_theme: neon
+:deckjs_transition: vertical-slide
 ...........................................
 
 
@@ -99,31 +108,62 @@ effect:
 * this entry should show up following the first one
 * this entry should be the last one 
 
-
-== Syntax (code block)
+== Syntax (literal block)
 syntax:
 
-...........................................
-  ...........................................
-  int swallow_redpill () {
-   unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
-   *((unsigned*)&rpill[3]) = (unsigned)m;
-   ((void(*)())&rpill)();
-   return (m[5]>0xd0) ? 1 : 0;
-  }
-  ...........................................
-...........................................
+	...........................................
+	<html>
+		<head>
+		</head>
+		<body>
+			<p>Hello World.</p>
+		</body>
+	</html>
+	...........................................
 
 effect:
 
+[options="incremental"]
 ...........................................
+<html>
+	<head>
+	</head>
+	<body>
+		<p>Hello World.</p>
+	</body>
+</html>
+...........................................
+
+
+== Syntax (code block)
+
+syntax:
+...........................................
+[source,c,numbered]
+-------------------------------------------
 int swallow_redpill () {
  unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
  *((unsigned*)&rpill[3]) = (unsigned)m;
  ((void(*)())&rpill)();
  return (m[5]>0xd0) ? 1 : 0;
 }
+-------------------------------------------
 ...........................................
+
+effect:
+
+[options="incremental"]
+[source,c,numbered]
+-------------------------------------------
+int swallow_redpill () {
+ unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
+ *((unsigned*)&rpill[3]) = (unsigned)m;
+ ((void(*)())&rpill)();
+ return (m[5]>0xd0) ? 1 : 0;
+}
+-------------------------------------------
+
+By default, AsciiDoc use *source-highlight* to highlight your code. If you want to use *Pygments*, you have to set _pygments_ attribute (refer to example template).
 
 == Syntax (quote block)
 QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks[this page].
@@ -139,6 +179,7 @@ syntax:
 
 effect:
 
+[options="incremental"]
 [quote, L. Kronecker]
 ___________________________________________
 God made the natural number and all the rest is the work of man
@@ -157,6 +198,7 @@ effect:
 [options="incremental"]
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 
+
 == Syntax (insert video)
 
 syntax:
@@ -166,7 +208,9 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 effect:
 
+[options="incremental"]
 video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
+
 
 == The End
 

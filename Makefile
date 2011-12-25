@@ -1,10 +1,10 @@
 all: build_page 
 
-build_page: example
+build_page: tutorial-slide
 	mdpage -t index.tp -o index.html
 
-example: 
-	asciidoc -f deckjs.conf example.asciidoc
+tutorial-slide: 
+	asciidoc -f deckjs.conf tutorial-slide.asciidoc
 
 clean: 
 	rm -rf *.html 

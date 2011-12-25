@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-  <title>Hello world</title>
+  <title>AsciidocDoc-Deck.js: deck.js backend for asciidoc.</title>
 </head>
 <body>
 
