@@ -112,46 +112,32 @@ effect:
 syntax:
 
 	...........................................
-	<section class="slide">
-		<h2>How to Make a Deck</h2>
-		<ol>
-			<li>
-				<h3>Write Slides</h3>
-				<p>Slide content is simple HTML.</p>
-			</li>
-			<li>
-				<h3>Choose Themes</h3>
-				<p>One for slide styles and one for deck transitions.</p>
-			</li>
-			…
-		</ol>
-	</section>
+	<html>
+		<head>
+		</head>
+		<body>
+			<p>Hello World.</p>
+		</body>
+	</html>
 	...........................................
 
 effect:
 
 [options="incremental"]
 ...........................................
-<section class="slide">
-	<h2>How to Make a Deck</h2>
-	<ol>
-		<li>
-			<h3>Write Slides</h3>
-			<p>Slide content is simple HTML.</p>
-		</li>
-		<li>
-			<h3>Choose Themes</h3>
-			<p>One for slide styles and one for deck transitions.</p>
-		</li>
-		…
-	</ol>
-</section>
+<html>
+	<head>
+	</head>
+	<body>
+		<p>Hello World.</p>
+	</body>
+</html>
 ...........................................
 
 
 == Syntax (code block)
-syntax:
 
+syntax:
 ...........................................
 [source,c,numbered]
 -------------------------------------------
@@ -176,6 +162,8 @@ int swallow_redpill () {
  return (m[5]>0xd0) ? 1 : 0;
 }
 -------------------------------------------
+
+By default, AsciiDoc use *source-highlight* to highlight your code. If you want to use *Pygments*, you have to set _pygments_ attribute (refer to example template).
 
 == Syntax (quote block)
 QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks[this page].
