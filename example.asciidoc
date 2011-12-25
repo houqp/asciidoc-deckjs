@@ -6,16 +6,22 @@ deck.js Support for Asciidoc
 :revdate: 2011-12-16
 :revnumber: 0.1
 ///////////////////////
-themes that you can choose includes:
+Themes that you can choose includes:
 web-2.0, swiss, neon
 ///////////////////////
-:deckjs-theme: neon
+:deckjs_theme: neon
 ///////////////////////
-transitions that you can choose includes:
+Transitions that you can choose includes:
 fade, horizontal-slide, vertical-slide
 ///////////////////////
-:deckjs-transition: vertical-slide
-
+:deckjs_transition: vertical-slide
+///////////////////////
+Uncomment following two lines if you want to highlight your code with Pygments
+Styles avaliable for pygment highlighter:
+monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+///////////////////////
+:pygments:
+:pygments_sytle: native
 
 == What is deck.js?
 
@@ -62,8 +68,8 @@ say whatever you want here.
 * you can choose theme and transition effect by specifying the *deckjs-theme* and *deckjs-transition* attributes:
 
 ...........................................
-:deckjs-theme: neon
-:deckjs-transition: vertical-slide
+:deckjs_theme: neon
+:deckjs_transition: vertical-slide
 ...........................................
 
 
@@ -99,31 +105,73 @@ effect:
 * this entry should show up following the first one
 * this entry should be the last one 
 
+== Syntax (literal block)
+syntax:
+
+	...........................................
+	<section class="slide">
+		<h2>How to Make a Deck</h2>
+		<ol>
+			<li>
+				<h3>Write Slides</h3>
+				<p>Slide content is simple HTML.</p>
+			</li>
+			<li>
+				<h3>Choose Themes</h3>
+				<p>One for slide styles and one for deck transitions.</p>
+			</li>
+			…
+		</ol>
+	</section>
+	...........................................
+
+effect:
+
+...........................................
+<section class="slide">
+	<h2>How to Make a Deck</h2>
+	<ol>
+		<li>
+			<h3>Write Slides</h3>
+			<p>Slide content is simple HTML.</p>
+		</li>
+		<li>
+			<h3>Choose Themes</h3>
+			<p>One for slide styles and one for deck transitions.</p>
+		</li>
+		…
+	</ol>
+</section>
+...........................................
+
 
 == Syntax (code block)
 syntax:
 
 ...........................................
-  ...........................................
-  int swallow_redpill () {
-   unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
-   *((unsigned*)&rpill[3]) = (unsigned)m;
-   ((void(*)())&rpill)();
-   return (m[5]>0xd0) ? 1 : 0;
-  }
-  ...........................................
-...........................................
-
-effect:
-
-...........................................
+[source,c,numbered]
+-------------------------------------------
 int swallow_redpill () {
  unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
  *((unsigned*)&rpill[3]) = (unsigned)m;
  ((void(*)())&rpill)();
  return (m[5]>0xd0) ? 1 : 0;
 }
+-------------------------------------------
 ...........................................
+
+effect:
+
+[options="incremental"]
+[source,c,numbered]
+-------------------------------------------
+int swallow_redpill () {
+ unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
+ *((unsigned*)&rpill[3]) = (unsigned)m;
+ ((void(*)())&rpill)();
+ return (m[5]>0xd0) ? 1 : 0;
+}
+-------------------------------------------
 
 == Syntax (quote block)
 QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks[this page].
