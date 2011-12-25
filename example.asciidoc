@@ -16,7 +16,9 @@ fade, horizontal-slide, vertical-slide
 ///////////////////////
 :deckjs_transition: vertical-slide
 ///////////////////////
-Uncomment following two lines if you want to highlight your code with Pygments
+AsciiDoc use `source-highlight` as default highlighter.
+
+Uncomment following two lines if you want to highlight your code with `Pygments`
 Styles avaliable for pygment highlighter:
 monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
 ///////////////////////
