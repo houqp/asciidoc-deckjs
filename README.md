@@ -1,14 +1,14 @@
 Asciidoc-deck.js
 ================
 
-An asciidoc backend for deck.js
+A Deck.js backend for asciidoc. 
 
 
 Dependencies
 ------------
 
 * AsciiDoc
-* deck.js (already included in this repo)
+* Deck.js (already included in this repo)
 
 Optional:
 
