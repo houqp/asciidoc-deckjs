@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>deck.js Support for Asciidoc</title>
+        <title>deck.js Support for Asciidoc</title>
 
-  <meta name="description" content="an example for writing deck.js presentation with asciidoc" />
-  <meta name="viewport" content="width=1024, user-scalable=no">
-  <meta name="author" content="Qingping Hou" />
-  <meta name="generator" content="AsciiDoc 8.6.5" />
-  <meta name="presdate" content="2011-12-16" />
-  
+        <meta name="description" content="an example for writing deck.js presentation with asciidoc" />
+        <meta name="viewport" content="width=1024, user-scalable=no">
+        <meta name="author" content="Qingping Hou" />
+        <meta name="generator" content="AsciiDoc 8.6.5" />
+        <meta name="presdate" content="2011-12-16" />
+        
 
-  <!-- Core and extension CSS files -->
-  <link rel="stylesheet" href="deck.js/core/deck.core.css">
-  <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
-  <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
-  <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
-  <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+        <!-- Core and extension CSS files -->
+        <link rel="stylesheet" href="deck.js/core/deck.core.css">
+        <link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+        <link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+        <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+        <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+        <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
 
-  <!-- Theme CSS files -->
+        <!-- Theme CSS files -->
+        <link rel="stylesheet" href="./deck.js/themes/style/neon.css">
+        <link rel="stylesheet" id="transition-theme-link" href="./deck.js/themes/transition/vertical-slide.css">
+        <link rel="stylesheet" href="./ad-stylesheet/pygments/native.css">
 
-  <!-- Replace path with correct path to Modernizr file. -->
-  <script src="deck.js/modernizr.custom.js"></script>
+        <!-- Replace path with correct path to Modernizr file. -->
+        <script src="deck.js/modernizr.custom.js"></script>
 </head>
 
 <body class="deck-container">
 
 <section class="slide" id="title-slide">
-  <h1>deck.js Support for Asciidoc</h1>
-  <h3>Qingping Hou</h3>
-  <h4>2011-12-16</h4>
+        <h1>deck.js Support for Asciidoc</h1>
+        <h3>Qingping Hou</h3>
+        <h4>2011-12-16</h4>
 </section>
 <section class="slide">
 <h2>What is deck.js?</h2>
@@ -124,42 +127,18 @@ this entry should be the last one
 <p>syntax:</p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>...........................................</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;html&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;head&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;/head&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;body&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;p&gt;Hello World.&lt;/p&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;/body&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>&lt;/html&gt;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>...........................................</tt></pre>
+<pre><tt>...........................................
+&lt;html&gt;
+        &lt;head&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+                &lt;p&gt;Hello World.&lt;/p&gt;
+        &lt;/body&gt;
+&lt;/html&gt;
+...........................................</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="literalblock">
+<div class="literalblock slide">
 <div class="content">
 <pre><tt>&lt;html&gt;
         &lt;head&gt;
@@ -186,30 +165,21 @@ int swallow_redpill () {
 -------------------------------------------</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="listingblock">
-<div class="content"><!-- Generator: GNU source-highlight 3.1
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
-<pre><tt><span style="color: #000000">00001:</span> </tt></pre></div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>*((unsigned*)&amp;rpill[3]) = (unsigned)m;</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt>((void(*)())&amp;rpill)();</tt></pre>
-</div></div>
-<div class="literalblock">
-<div class="content">
-<pre><tt> return (m[5]&gt;0xd0) ? 1 : 0;
-}</tt></pre>
-</div></div>
-<pre><code></code></pre>
+<div class="listingblock slide">
+<div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">swallow_redpill</span> <span class="p">()</span> <span class="p">{</span>
+ <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="p">],</span> <span class="n">rpill</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\x0f\x01\x0d\x00\x00\x00\x00\xc3</span><span class="s">&quot;</span><span class="p">;</span>
+ <span class="o">*</span><span class="p">((</span><span class="kt">unsigned</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">rpill</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">m</span><span class="p">;</span>
+ <span class="p">((</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)())</span><span class="o">&amp;</span><span class="n">rpill</span><span class="p">)();</span>
+ <span class="k">return</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">&gt;</span><span class="mh">0xd0</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>By default, AsciiDoc use <strong>source-highlight</strong> to highlight your code. If you want to use <strong>Pygments</strong>, you have to set <em>pygments</em> attribute (refer to example template).</p>
 </section>
 <section class="slide">
 <h2>Syntax (quote block)</h2>
@@ -223,7 +193,7 @@ http://www.gnu.org/software/src-highlite -->
   ___________________________________________</tt></pre>
 </div></div>
 <p>effect:</p>
-<blockquote>
+<blockquote class="slide">
   <p>God made the natural number and all the rest is the work of man</p>
   <p><cite>-- L. Kronecker </cite></p>
 </blockquote>
@@ -246,13 +216,14 @@ http://www.gnu.org/software/src-highlite -->
 <pre><tt>video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]</tt></pre>
 </div></div>
 <p>effect:</p>
+<div class="slide">
 <iframe width="420" height="315" src="http://www.youtube.com/embed/GP3zvc2dG5Y" frameborder="0" allowfullscreen></iframe>
+</div>
 </section>
 <section class="slide">
 <h2>The End</h2>
 <p>That&#8217;s all. Hope you enjoy this backend. :-)</p>
 </section>
-
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
@@ -286,7 +257,7 @@ http://www.gnu.org/software/src-highlite -->
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
         $(function() {
-                $.deck('.slide');
+                                        $.deck('.slide');
         });
 </script>
 </body>
