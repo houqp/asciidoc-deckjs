@@ -10,6 +10,10 @@ Dependencies
 * AsciiDoc
 * deck.js (already included in this repo)
 
+Optional:
+
+* If you want to highlight source code, please install Pygments or source-highlight.
+
 
 Installation
 ------------
