@@ -4,7 +4,7 @@ deck.js Support for Asciidoc
 :email: <dave2008713@gmail.com>
 :description: an example for writing deck.js presentation with asciidoc
 :revdate: 2011-12-16
-:revnumber: 0.1
+:revnumber: 1.0
 ///////////////////////
 Themes that you can choose includes:
 web-2.0, swiss, neon
