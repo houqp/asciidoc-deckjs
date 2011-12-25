@@ -23,6 +23,7 @@ monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fr
 :pygments:
 :pygments_sytle: native
 
+
 == What is deck.js?
 
 *deck.js* is a JavaScript library for building modern HTML presentations. *deck.js* is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
@@ -127,6 +128,7 @@ syntax:
 
 effect:
 
+[options="incremental"]
 ...........................................
 <section class="slide">
 	<h2>How to Make a Deck</h2>
@@ -187,6 +189,7 @@ syntax:
 
 effect:
 
+[options="incremental"]
 [quote, L. Kronecker]
 ___________________________________________
 God made the natural number and all the rest is the work of man
@@ -205,6 +208,7 @@ effect:
 [options="incremental"]
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 
+
 == Syntax (insert video)
 
 syntax:
@@ -214,7 +218,9 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 effect:
 
+[options="incremental"]
 video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
+
 
 == The End
 
