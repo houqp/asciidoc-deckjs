@@ -116,4 +116,27 @@ describe('Deck JS Quick Go-To', function() {
 			expect($(defaults.selectors.container)).not.toHaveClass(defaults.classes.goto);
 		});
 	});
+	
+	describe('countNested false', function() {
+	  beforeEach(function() {
+	    loadFixtures('nesteds.html');
+			$.deck('.slide', {
+				countNested: false
+			});
+			$.deck('showGoTo');
+	  });
+	  
+		it('should ignore nested slides when given a slide number', function() {
+			$(defaults.selectors.gotoInput).val('4');
+			$(defaults.selectors.gotoForm).submit();
+			expect($.deck('getSlide')).toHaveId('after');
+		});
+		
+		it('should respect top side of new slide range', function() {
+		  $.deck('go', 0);
+			$(defaults.selectors.gotoInput).val('6');
+			$(defaults.selectors.gotoForm).submit();
+			expect($.deck('getSlide')).toHaveId('slide-0');
+		});
+	});
 });
