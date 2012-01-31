@@ -19,7 +19,7 @@ fade, horizontal-slide, vertical-slide
 AsciiDoc use `source-highlight` as default highlighter.
 
 Uncomment following two lines if you want to highlight your code with `Pygments`
-Styles avaliable for pygment highlighter:
+Styles available for pygment highlighter:
 monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
 ///////////////////////
 :pygments:
@@ -33,9 +33,10 @@ monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fr
 
 For more information, please check out its http://imakewebthings.github.com/deck.js/[Project page].
 
+
 == How to generate deck.js with Asciidoc
 
-It's just as simple as issusing following command:
+It's just as simple as issuing following command:
 
 ...........................................
 asciidoc -f deckjs.conf file.asciidoc
@@ -43,7 +44,7 @@ asciidoc -f deckjs.conf file.asciidoc
 
 
 == Shortcuts
-Folloing are built-in shortcuts in deck.js:
+Following are built-in shortcuts in deck.js:
 
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
@@ -108,6 +109,7 @@ effect:
 * this entry should show up following the first one
 * this entry should be the last one 
 
+
 == Syntax (literal block)
 syntax:
 
@@ -138,6 +140,7 @@ effect:
 == Syntax (code block)
 
 syntax:
+
 ...........................................
 [source,c,numbered]
 -------------------------------------------
@@ -165,6 +168,7 @@ int swallow_redpill () {
 
 By default, AsciiDoc use *source-highlight* to highlight your code. If you want to use *Pygments*, you have to set _pygments_ attribute (refer to example template).
 
+
 == Syntax (quote block)
 QuoteBlocks syntax from Asciidoc is fully supported, you can find complete guide on http://www.methods.co.nz/asciidoc/userguide.html#_quote_blocks[this page].
 
@@ -189,6 +193,7 @@ ___________________________________________
 == Syntax (insert image)
 
 syntax:
+
 ...........................................
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]
 ...........................................
@@ -202,6 +207,7 @@ image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 == Syntax (insert video)
 
 syntax:
+
 ...........................................
 video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 ...........................................
