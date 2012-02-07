@@ -29,7 +29,7 @@
 
 <ul>
 <li>AsciiDoc</li>
-<li>Deck.js (already included in this repo)</li>
+<li>Deck.js</li>
 </ul>
 
 <p>Optional:</p>
@@ -40,7 +40,9 @@
 
 <h2>Installation</h2>
 
-<p>All you need to do is to make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X7">this guide</a>.</p>
+<p>If you don't have deck.js you can download it automatically with <code>make install</code>. Or you can get it manually from its official <a href="https://github.com/imakewebthings/deck.js/zipball/stable">link</a>, and rename the unzipped directory to <code>deck.js</code>.</p>
+
+<p>The second thing you need to do is to make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X7">this guide</a>.</p>
 
 <p>The easiest way is to put <code>deckjs.conf</code> and the asciidoc file you wrote in the same directory.</p>
 
@@ -51,6 +53,8 @@ asciidoc -f deck.js.conf file.asciidoc
 </code></p>
 
 <p>file.asciidoc is the asciidoc file you wrote. </p>
+
+<p>Remember to put <code>deck.js</code> and generated slide into the same directory.</p>
 	</section>
 
 </body>
