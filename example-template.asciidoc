@@ -6,25 +6,32 @@ deck.js Support for Asciidoc
 :revdate: 2011-12-16
 :revnumber: 0.1
 ///////////////////////
-Themes that you can choose includes:
-web-2.0, swiss, neon
+	Themes that you can choose includes:
+	web-2.0, swiss, neon
 ///////////////////////
 :deckjs_theme: web-2.0
 ///////////////////////
-Transitions that you can choose includes:
-fade, horizontal-slide, vertical-slide
+	Transitions that you can choose includes:
+	fade, horizontal-slide, vertical-slide
 ///////////////////////
 :deckjs_transition: horizontal-slide
 ///////////////////////
-AsciiDoc use `source-highlight` as default highlighter.
+	AsciiDoc use `source-highlight` as default highlighter.
 
-Uncomment following two lines if you want to highlight your code with `Pygments`
-Styles available for pygment highlighter:
-monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+	Styles available for pygment highlighter:
+	monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac,
+	tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
+
+	Uncomment following two lines if you want to highlight your code
+	with `Pygments`.
 ///////////////////////
 //:pygments:
 //:pygments_sytle: native
-
+///////////////////////
+	Uncomment following line if you want to scroll inside slide 
+	ith {down,up} arrow keys.
+///////////////////////
+//:scrollable:
 
 == Slide One
 
@@ -35,4 +42,3 @@ monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac, tango, fr
 == Slide Two
 
 That's all.
-
