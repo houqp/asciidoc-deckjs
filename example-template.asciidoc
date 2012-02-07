@@ -7,7 +7,7 @@ deck.js Support for Asciidoc
 :revnumber: 0.1
 ///////////////////////
 	Themes that you can choose includes:
-	web-2.0, swiss, neon
+	web-2.0, swiss, neon beamer
 ///////////////////////
 :deckjs_theme: web-2.0
 ///////////////////////

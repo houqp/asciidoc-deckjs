@@ -6,11 +6,11 @@
 
         <title>deck.js Support for Asciidoc</title>
 
-        <meta name="description" content="an example for writing deck.js presentation with asciidoc" />
+        <meta name="description" content="a tutorial for writing deck.js presentation with asciidoc" />
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Qingping Hou" />
         <meta name="generator" content="AsciiDoc 8.6.5" />
-        <meta name="presdate" content="2011-12-16" />
+        <meta name="presdate" content="2012-02-07" />
         
 
         <!-- Core and extension CSS files -->
@@ -20,11 +20,11 @@
         <link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
         <link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
         <link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+        <link rel="stylesheet" href="deck.js/extensions/toc/deck.toc.css">
 
         <!-- Theme CSS files -->
         <link rel="stylesheet" href="./deck.js/themes/style/neon.css">
-        <link rel="stylesheet" id="transition-theme-link" href="./deck.js/themes/transition/vertical-slide.css">
-        <link rel="stylesheet" href="./ad-stylesheet/pygments/native.css">
+        <link rel="stylesheet" id="transition-theme-link" href="./deck.js/themes/transition/horizontal-slide.css">
 
         <!-- Replace path with correct path to Modernizr file. -->
         <script src="deck.js/modernizr.custom.js"></script>
@@ -35,7 +35,7 @@
 <section class="slide" id="title-slide">
         <h1>deck.js Support for Asciidoc</h1>
         <h3>Qingping Hou</h3>
-        <h4>2011-12-16</h4>
+        <h4>2012-02-07</h4>
 </section>
 <section class="slide">
 <h2>What is deck.js?</h2>
@@ -59,6 +59,12 @@ jump to any slide by given number, <tt>g</tt>.
 </li>
 <li>
 preview all slides, <tt>m</tt>.
+</li>
+</ul>
+<p>Shortcuts from deck.js extensions:</p>
+<ul">
+<li>
+toggle table of content, <tt>t</tt>
 </li>
 </ul>
 </section>
@@ -233,6 +239,17 @@ int swallow_redpill () {
         <span class="deck-status-total"></span>
 </p>
 
+<!-- toc pannel -->
+<div class="deck-toc"></div>
+
+<!-- this is a toc status panel -->
+<!-- <table class="deck-toc-status"> -->
+         <!-- <tr> -->
+                 <!-- <td class="right deck-toc-h2">&nbsp;</td> -->
+                 <!-- <td class="left deck-toc-h3">&nbsp;</td> -->
+         <!-- </tr> -->
+<!-- </table> -->
+
 <form action="." method="get" class="goto-form">
         <label for="goto-slide">Go to slide:</label>
         <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
@@ -253,11 +270,13 @@ int swallow_redpill () {
 <script src="deck.js/extensions/goto/deck.goto.js"></script>
 <script src="deck.js/extensions/status/deck.status.js"></script>
 <script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/toc/deck.toc.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
         $(function() {
-                                        $.deck('.slide');
+                
+                $.deck('.slide');
         });
 </script>
 </body>
