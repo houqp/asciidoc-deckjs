@@ -61,6 +61,7 @@ clean:
 	rm -rf deck.ext.js.zip deckextjs
 	rm -rf deck.js.extended.zip
 	rm -rf $(distdir)
+	rm -rf asciidoc-deckjs-*.zip
 
 .PHONY: all clean test dist
 
