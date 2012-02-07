@@ -1,13 +1,10 @@
 all: test
 
 test:
-	asciidoc --conf-file deckjs.conf example.asciidoc
-
-install:
-	git submodule init
+	asciidoc --conf-file deckjs.conf example-template.asciidoc
 
 clean: 
-	rm -rf example.html
+	rm -rf example-template.html
 
 .PHONY: all clean
 
