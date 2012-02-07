@@ -15,6 +15,7 @@ install:
 	curl --location https://github.com/imakewebthings/deck.js/zipball/stable 2> /dev/null > deck.js.zip
 	unzip deck.js.zip
 	mv imakewebthings-deck.js-* deck.js
+	rm deck.js.zip
 
 dist:$(distdir).zip
 
