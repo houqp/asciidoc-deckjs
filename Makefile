@@ -10,7 +10,9 @@ all:
 test:
 	asciidoc --conf-file deckjs.conf example-template.asciidoc
 
-install:
+install:install-deckjs
+
+install-deckjs:
 	rm -rf ./deck.js
 	curl --location https://github.com/imakewebthings/deck.js/zipball/stable 2> /dev/null > deck.js.zip
 	unzip deck.js.zip
