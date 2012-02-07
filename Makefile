@@ -37,5 +37,5 @@ clean:
 	rm -rf deck.js.zip deck.js
 	rm -rf $(distdir)
 
-.PHONY: all clean test 
+.PHONY: all clean test dist
 
