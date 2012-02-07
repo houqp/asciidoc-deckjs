@@ -6,6 +6,11 @@ build_page: tutorial-slide
 tutorial-slide: 
 	asciidoc -f deckjs.conf tutorial-slide.asciidoc
 
+install-deckjs:
+	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
+	unzip deck.js.extended.zip
+	rm deck.js.extended.zip
+
 clean: 
 	rm -rf *.html 
 
