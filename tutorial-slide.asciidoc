@@ -2,9 +2,9 @@ deck.js Support for Asciidoc
 =============================
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
-:description: an example for writing deck.js presentation with asciidoc
+:description: a tutorial for writing deck.js presentation with asciidoc
 :revdate: 2012-02-07
-:revnumber: 1.1
+:revnumber: 0.2
 ///////////////////////
 	Themes that you can choose includes:
 	web-2.0, swiss, neon
@@ -28,10 +28,10 @@ deck.js Support for Asciidoc
 //:pygments:
 //:pygments_sytle: native
 ///////////////////////
-	Uncomment following line if you want to scroll inside slide 
-	ith {down,up} arrow keys.
+	Uncomment following line if you want to scroll inside slides
+	with {down,up} arrow keys.
 ///////////////////////
-:scrollable:
+//:scrollable:
 
 
 == What is deck.js?
@@ -56,6 +56,10 @@ Following are built-in shortcuts in deck.js:
 
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
+
+Shortcuts from deck.js extensions:
+
+* toggle table of content, `t`
 
 
 == Syntax (basic)

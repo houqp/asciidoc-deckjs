@@ -28,8 +28,8 @@ deck.js Support for Asciidoc
 //:pygments:
 //:pygments_sytle: native
 ///////////////////////
-	Uncomment following line if you want to scroll inside slide 
-	ith {down,up} arrow keys.
+	Uncomment following line if you want to scroll inside slides
+	with {down,up} arrow keys.
 ///////////////////////
 //:scrollable:
 
