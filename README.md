@@ -34,6 +34,6 @@ asciidoc -f deck.js.conf file.asciidoc
 
 file.asciidoc is the asciidoc file you wrote. 
 
-Remember to put `deck.js` and generated slide into the same directory.
+Remember to put `deck.js`, `ad-stylesheet` and generated slide into the same directory.
 
 
