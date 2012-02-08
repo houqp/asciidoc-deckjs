@@ -14,7 +14,7 @@
 <h1>AsciiDoc-Deck.js</h1>
 
 <ul>
-<li><a href="https://github.com/downloads/houqp/asciidoc-deckjs/asciidoc-deckjs-1.1.zip">Latest version download</a></li>
+<li><a href="https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.zip">Latest version download</a></li>
 </ul>
 
 <p>I have written a <a href="./tutorial-slide.html">tutorial-slide for illustration</a>. The source code of the tutorial-slide can be found <a href="./tutorial-slide.asciidoc">here</a>.</p>
@@ -33,7 +33,7 @@
 
 <ul>
 <li>AsciiDoc</li>
-<li>Deck.js</li>
+<li>Deck.js (included in the backend package)</li>
 </ul>
 
 <p>Optional:</p>
@@ -44,21 +44,33 @@
 
 <h2>Installation</h2>
 
-<p>If you don't have deck.js you can download it automatically with <code>make install</code>. Or you can get it manually from its official <a href="https://github.com/imakewebthings/deck.js/zipball/stable">link</a>, and rename the unzipped directory to <code>deck.js</code>. (when installing with make, you also get some other deck.js extensions.)</p>
+<p>Download the <a href="https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.zip">backend package</a> and use asciidoc to install:</p>
 
-<p>The second thing you need to do is to make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X7">this guide</a>.</p>
+<p><code>bash
+asciidoc --backend install deckjs-1.2.zip
+</code></p>
 
-<p>The easiest way is to put <code>deckjs.conf</code> and the asciidoc file you wrote in the same directory.</p>
+<p>This will install the backend to <code>~/asciidoc/backend/deckjs</code>.</p>
+
+<p>You can also use this backend without installation, see the next section.</p>
 
 <h2>Usage</h2>
+
+<p>With deckjs backend installed, use following command to generate slides:</p>
+
+<p><code>bash
+asciidoc -b deckjs file.asciidoc
+</code></p>
+
+<p>To use without Installation, you need to specify different argument:</p>
 
 <p><code>bash
 asciidoc -f deck.js.conf file.asciidoc
 </code></p>
 
-<p>file.asciidoc is the asciidoc file you wrote. </p>
+<p>Make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X27">this guide</a>.</p>
 
-<p>Remember to put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory.</p>
+<p>Note that without installation, you also have to enable <code>linkcss</code> option. Then put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory. Checkout the <a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">template file</a> for how to enable all kinds of options.</p>
 	</section>
 
 </body>
