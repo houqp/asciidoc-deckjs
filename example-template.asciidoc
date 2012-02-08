@@ -26,12 +26,17 @@ deck.js Support for Asciidoc
 	with `Pygments`.
 ///////////////////////
 //:pygments:
-//:pygments_sytle: native
+//:pygments_style: native
 ///////////////////////
 	Uncomment following line if you want to scroll inside slides
 	with {down,up} arrow keys.
 ///////////////////////
 //:scrollable:
+///////////////////////
+	Uncomment following line if you want to link css and js file 
+	from outside instead of embedding them into the output file.
+///////////////////////
+//:linkcss:
 
 == Slide One
 

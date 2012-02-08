@@ -3,35 +3,13 @@ deck.js Support for Asciidoc
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-02-07
-:revnumber: 0.2
-///////////////////////
-	Themes that you can choose includes:
-	web-2.0, swiss, neon, beamer
-///////////////////////
+:revdate: 2012-02-08
+:revnumber: 0.3
 :deckjs_theme: neon
-///////////////////////
-	Transitions that you can choose includes:
-	fade, horizontal-slide, vertical-slide
-///////////////////////
 :deckjs_transition: horizontal-slide
-///////////////////////
-	AsciiDoc use `source-highlight` as default highlighter.
-
-	Styles available for pygment highlighter:
-	monokai, manni, perldoc, borland, colorful, default, murphy, vs, trac,
-	tango, fruity, autumn, bw, emacs, vim, pastie, friendly, native,
-
-	Uncomment following two lines if you want to highlight your code
-	with `Pygments`.
-///////////////////////
-//:pygments:
-//:pygments_sytle: native
-///////////////////////
-	Uncomment following line if you want to scroll inside slides
-	with {down,up} arrow keys.
-///////////////////////
-//:scrollable:
+:pygments:
+:pygments_style: native
+:scrollable:
 
 
 == What is deck.js?
@@ -39,19 +17,30 @@ deck.js Support for Asciidoc
 *deck.js* is a JavaScript library for building modern HTML presentations. *deck.js* is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.
 
 
-For more information, please check out its http://imakewebthings.github.com/deck.js/[Project page].
+For more information, please check out its http://imakewebthings.github.com/deck.js/[project page].
 
 
 == How to generate deck.js with Asciidoc
 
-It's just as simple as issuing following command:
+First, make sure you have at least asciidoc-8.6.6 installed and download this backend from the http://houqp.github.com/asciidoc-deckjs/[project page].
+
+Then install the backend:
 
 ...........................................
-asciidoc -f deckjs.conf file.asciidoc
+asciidoc --backend install deckjs-1.2.zip
 ...........................................
+
+After the installation, it's just as simple as issuing following command:
+
+...........................................
+asciidoc -b deckjs.conf file.asciidoc
+...........................................
+
+You can also use this backend without installation, please refer to https://github.com/houqp/asciidoc-deckjs/blob/master/README.md[README] for details.
 
 
 == Shortcuts
+
 Following are built-in shortcuts in deck.js:
 
 * jump to any slide by given number, `g`.

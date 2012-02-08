@@ -11,6 +11,12 @@ install-deckjs:
 	unzip deck.js.extended.zip
 	rm deck.js.extended.zip
 
+check:
+	git checkout master README.md
+	git checkout master deckjs.conf
+	git checkout master tutorial-slide.asciidoc
+	git checkout master example-template.asciidoc
+
 clean: 
 	rm -rf *.html 
 
