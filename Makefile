@@ -9,7 +9,8 @@ all:
 	@echo "* issue make install to install deck.js dependence."
 
 test:
-	asciidoc --conf-file deckjs.conf example-template.asciidoc
+	asciidoc -b deckjs example-template.asciidoc
+	asciidoc -b deckjs tutorial-slide.asciidoc
 
 install:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
@@ -56,6 +57,7 @@ $(distdir):built-deckjs
 
 clean: 
 	rm -rf example-template.html
+	rm -rf tutorial-slide.html
 	rm -rf deck.js.zip deck.js
 	rm -rf deck.ext.js.zip deckextjs
 	rm -rf deck.js.extended.zip
