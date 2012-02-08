@@ -6,7 +6,7 @@ A Deck.js backend for asciidoc.
 ## Dependencies
 
 * AsciiDoc
-* Deck.js
+* Deck.js (included in the backend package)
 
 Optional:
 
@@ -15,23 +15,39 @@ Optional:
 
 ## Installation
 
-If you don't have deck.js you can download it automatically with `make install`. Or you can get it manually from its official [link][deckjs], and rename the unzipped directory to `deck.js`. (when installing with make, you also get some other deck.js extensions.)
+Download the [backend package][deckjs] and use asciidoc to install:
 
-The second thing you need to do is to make sure your asciidoc can properly find `deckjs.conf`. For asciidoc's configuration file loading strategy, please refer to [this guide][asc-conf-guide].
+```bash
+asciidoc --backend install deckjs-1.2.zip
+```
 
-The easiest way is to put `deckjs.conf` and the asciidoc file you wrote in the same directory.
+This will install the backend to `~/asciidoc/backend/deckjs`.
+
+You can also use this backend without installation, see the next section.
 
 
 ## Usage
+
+With deckjs backend installed, use following command to generate slides:
+
+```bash
+asciidoc -b deckjs file.asciidoc
+```
+
+To use without Installation, you need to specify different argument:
 
 ```bash
 asciidoc -f deck.js.conf file.asciidoc
 ```
 
-file.asciidoc is the asciidoc file you wrote. 
+Make sure your asciidoc can properly find `deckjs.conf`. For asciidoc's configuration file loading strategy, please refer to [this guide][asc-conf-guide].
 
-Remember to put `deck.js`, `ad-stylesheet` and generated slide into the same directory.
+Note that without installation, you also have to enable `linkcss` option. Then put `deck.js`, `ad-stylesheet` and generated slide into the same directory. Checkout the [template file][example] for how to enable all kinds of options.
 
 
-[deckjs]:https://github.com/imakewebthings/deck.js/zipball/stable
-[asc-conf-guide]:http://www.methods.co.nz/asciidoc/userguide.html#X7
+
+[deckjs]:https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.zip
+[deckjs-ext]:https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
+[asc-conf-guide]:http://www.methods.co.nz/asciidoc/userguide.html#X27
+[example]:http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc
+
