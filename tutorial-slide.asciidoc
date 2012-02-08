@@ -10,6 +10,7 @@ deck.js Support for Asciidoc
 :pygments:
 :pygments_style: native
 :scrollable:
+:linkcss:
 
 
 == What is deck.js?
