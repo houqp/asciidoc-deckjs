@@ -4,7 +4,7 @@ build_page: tutorial-slide
 	mdpage -t index.tp -o index.html
 
 tutorial-slide: 
-	asciidoc -f deckjs.conf tutorial-slide.asciidoc
+	asciidoc -b deckjs tutorial-slide.asciidoc
 
 install-deckjs:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
