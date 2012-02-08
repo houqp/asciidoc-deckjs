@@ -46,7 +46,7 @@ Note that without installation, you also have to enable `linkcss` option. Then p
 
 
 
-[deckjs]:https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.zip
+[deckjs]:https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.1.zip
 [deckjs-ext]:https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
 [asc-conf-guide]:http://www.methods.co.nz/asciidoc/userguide.html#X27
 [example]:http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc
