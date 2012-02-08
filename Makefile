@@ -1,16 +1,16 @@
-package = asciidoc-deckjs
-version = 1.1
-tarname = $(package)
-distdir = $(tarname)-$(version)
+package:= deckjs
+version:= $(shell head -n 1 deckjs.conf | sed s/\#\ version\ //g)
+tarname:= $(package)
+distdir:= $(tarname)-$(version)
 
 all:
+	@echo -e "asciidoc-deckjs $(version)\n"
 	@echo "* issue make test to test the backend."
 	@echo "* issue make install to install deck.js dependence."
 
 test:
 	asciidoc --conf-file deckjs.conf example-template.asciidoc
 
-#install:ins-deckjs ins-deckextjs
 install:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
 	unzip deck.js.extended.zip
@@ -41,13 +41,12 @@ ins-deckjs:
 dist:$(distdir).zip
 
 $(distdir).zip:$(distdir)
-	zip -r $@ $(distdir)
+	asciidoc --backend build $@ $(distdir)
 	rm -rf $(distdir)
 
 $(distdir):built-deckjs
 	mkdir -p $(distdir)/example
 	cp -r ad-stylesheet $(distdir)
-	cp Makefile $(distdir)
 	cp GPL-license.txt $(distdir)
 	cp deckjs.conf $(distdir)
 	cp example-template.asciidoc $(distdir)/example
@@ -61,7 +60,7 @@ clean:
 	rm -rf deck.ext.js.zip deckextjs
 	rm -rf deck.js.extended.zip
 	rm -rf $(distdir)
-	rm -rf asciidoc-deckjs-*.zip
+	rm -rf deckjs-*.zip
 
 .PHONY: all clean test dist
 
