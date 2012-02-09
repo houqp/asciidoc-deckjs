@@ -10,5 +10,5 @@ You can checkout all the related code in [this repository][this-repo].
 
 
 
-[ad-download]:https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.1.zip
+[ad-download]:https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.2.zip
 [this-repo]:https://github.com/houqp/asciidoc-deckjs
