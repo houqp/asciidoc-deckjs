@@ -55,6 +55,11 @@ $(distdir):built-deckjs
 	cp README.md $(distdir)
 	cp -r deck.js $(distdir)
 
+check:
+	git checkout gh-pages README.md
+	git checkout gh-pages tutorial-slide.asciidoc
+	git checkout gh-pages example-template.asciidoc
+
 clean: 
 	rm -rf example-template.html
 	rm -rf tutorial-slide.html
