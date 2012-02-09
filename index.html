@@ -56,13 +56,19 @@ asciidoc --backend install deckjs-1.2.zip
 
 <h2>Usage</h2>
 
-<p>With deckjs backend installed, use following command to generate slides:</p>
+<ul>
+<li>With deckjs backend installed, use following command to generate slides:</li>
+</ul>
 
 <p><code>bash
 asciidoc -b deckjs file.asciidoc
 </code></p>
 
-<p>To use without Installation, you need to specify different argument:</p>
+<p>By default, the <code>linkcss</code> option is disabled so all the required js and css file will be embedded into the output slide. Checkout the <a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">template file</a> for how to enable all kinds of options.</p>
+
+<ul>
+<li>To use without Installation, you need to specify different argument:</li>
+</ul>
 
 <p><code>bash
 asciidoc -f deck.js.conf file.asciidoc
@@ -70,7 +76,7 @@ asciidoc -f deck.js.conf file.asciidoc
 
 <p>Make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X27">this guide</a>.</p>
 
-<p>Note that without installation, you also have to enable <code>linkcss</code> option. Then put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory. Checkout the <a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">template file</a> for how to enable all kinds of options.</p>
+<p>Note that without installation, you also have to enable <code>linkcss</code> option. Then put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory. </p>
 	</section>
 
 </body>
