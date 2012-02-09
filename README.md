@@ -28,13 +28,15 @@ You can also use this backend without installation, see the next section.
 
 ## Usage
 
-With deckjs backend installed, use following command to generate slides:
+* With deckjs backend installed, use following command to generate slides:
 
 ```bash
 asciidoc -b deckjs file.asciidoc
 ```
 
-To use without Installation, you need to specify different argument:
+By default, the `linkcss` option is disabled so all the required js and css file will be embedded into the output slide. Checkout the [template file][example] for how to enable all kinds of options.
+
+* To use without Installation, you need to specify different argument:
 
 ```bash
 asciidoc -f deck.js.conf file.asciidoc
@@ -42,7 +44,7 @@ asciidoc -f deck.js.conf file.asciidoc
 
 Make sure your asciidoc can properly find `deckjs.conf`. For asciidoc's configuration file loading strategy, please refer to [this guide][asc-conf-guide].
 
-Note that without installation, you also have to enable `linkcss` option. Then put `deck.js`, `ad-stylesheet` and generated slide into the same directory. Checkout the [template file][example] for how to enable all kinds of options.
+Note that without installation, you also have to enable `linkcss` option. Then put `deck.js`, `ad-stylesheet` and generated slide into the same directory. 
 
 
 
