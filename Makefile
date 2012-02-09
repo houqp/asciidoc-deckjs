@@ -5,6 +5,7 @@ build_page: tutorial-slide
 
 tutorial-slide: 
 	asciidoc -b deckjs tutorial-slide.asciidoc
+	asciidoc -b deckjs example-template.asciidoc
 
 install-deckjs:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip

@@ -3,14 +3,13 @@ deck.js Support for Asciidoc
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-02-08
-:revnumber: 0.3
+:revdate: 2012-02-09
+:revnumber: 0.4
 :deckjs_theme: neon
 :deckjs_transition: horizontal-slide
 :pygments:
 :pygments_style: native
 :scrollable:
-:linkcss:
 
 
 == What is deck.js?
