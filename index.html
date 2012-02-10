@@ -12,72 +12,48 @@
 
   <section id="main" class="center_cls">
 <h1>AsciiDoc-Deck.js</h1>
-
 <ul>
 <li><a href="https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.2.zip">Latest version download</a></li>
 </ul>
-
 <p>I have written a <a href="./tutorial-slide.html">tutorial-slide for illustration</a>. The source code of the tutorial-slide can be found <a href="./tutorial-slide.asciidoc">here</a>.</p>
-
 <p>Writing Deck.js slides with AsciiDoc is very simple, I suggest you get start with <a href="./example-template.asciidoc">this template</a>.</p>
-
-<p>You can checkout all the related code in <a href="https://github.com/houqp/asciidoc-deckjs">this repository</a>.</p>
-  </section>
+<p>You can checkout all the related code in <a href="https://github.com/houqp/asciidoc-deckjs">this repository</a>.</p>  </section>
 
 	<section id="readme" class="center_cls">
 <h1>Asciidoc-deck.js</h1>
-
 <p>A Deck.js backend for asciidoc. </p>
-
 <h2>Dependencies</h2>
-
 <ul>
 <li>AsciiDoc</li>
 <li>Deck.js (included in the backend package)</li>
 </ul>
-
 <p>Optional:</p>
-
 <ul>
 <li>If you want to highlight source code, please install Pygments or source-highlight.</li>
 </ul>
-
 <h2>Installation</h2>
-
 <p>Download the <a href="https://github.com/downloads/houqp/asciidoc-deckjs/deckjs-1.2.2.zip">backend package</a> and use asciidoc to install:</p>
-
-<p><code>bash
-asciidoc --backend install deckjs-1.2.zip
-</code></p>
+<pre><code class="bash">asciidoc --backend install deckjs-1.2.zip
+</code></pre>
 
 <p>This will install the backend to <code>~/asciidoc/backend/deckjs</code>.</p>
-
 <p>You can also use this backend without installation, see the next section.</p>
-
 <h2>Usage</h2>
-
 <ul>
 <li>With deckjs backend installed, use following command to generate slides:</li>
 </ul>
-
-<p><code>bash
-asciidoc -b deckjs file.asciidoc
-</code></p>
+<pre><code class="bash">asciidoc -b deckjs file.asciidoc
+</code></pre>
 
 <p>By default, the <code>linkcss</code> option is disabled so all the required js and css file will be embedded into the output slide. Checkout the <a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">template file</a> for how to enable all kinds of options.</p>
-
 <ul>
 <li>To use without Installation, you need to specify different argument:</li>
 </ul>
-
-<p><code>bash
-asciidoc -f deck.js.conf file.asciidoc
-</code></p>
+<pre><code class="bash">asciidoc -f deck.js.conf file.asciidoc
+</code></pre>
 
 <p>Make sure your asciidoc can properly find <code>deckjs.conf</code>. For asciidoc's configuration file loading strategy, please refer to <a href="http://www.methods.co.nz/asciidoc/userguide.html#X27">this guide</a>.</p>
-
-<p>Note that without installation, you also have to enable <code>linkcss</code> option. Then put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory. </p>
-	</section>
+<p>Note that without installation, you also have to enable <code>linkcss</code> option. Then put <code>deck.js</code>, <code>ad-stylesheet</code> and generated slide into the same directory. </p>	</section>
 
 </body>
 </html>
