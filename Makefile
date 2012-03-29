@@ -22,7 +22,7 @@ built-deckjs:ins-deckjs ins-deckextjs
 pac-deckjs:built-deckjs
 	zip -r deck.js.extended.zip deck.js
 
-ins-deckextjs:
+ins-deckextjs:ins-deckjs
 	curl --location https://github.com/barraq/deck.ext.js/zipball/master 2> /dev/null > deck.ext.js.zip
 	unzip deck.ext.js.zip
 	rm deck.ext.js.zip
@@ -31,6 +31,10 @@ ins-deckextjs:
 	mv deckextjs/themes/style/* deck.js/themes/style/
 	mv deckextjs/themes/transition/* deck.js/themes/transition/
 	rm -rf deckextjs
+
+ins-deckjsblank:ins-deckjs
+	git clone https://github.com/mikek70/deck.js-blank.git
+	mv deck.js-blank deck.js/extensions/
 
 ins-deckjs:
 	rm -rf ./deck.js
