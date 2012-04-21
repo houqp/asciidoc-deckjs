@@ -3,8 +3,8 @@ deck.js Support for Asciidoc
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-02-09
-:revnumber: 0.4
+:revdate: 2012-03-29
+:revnumber: 0.5
 :deckjs_theme: neon
 :deckjs_transition: horizontal-slide
 :pygments:
@@ -46,9 +46,17 @@ Following are built-in shortcuts in deck.js:
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
 
+
 Shortcuts from deck.js extensions:
 
 * toggle table of content, `t`
+* toggle page blank/unblank, `b`
+
+
+AsciiDoc-Deckjs includes following extensions:
+
+* https://github.com/barraq/deck.ext.js[deck.ext.js]
+* https://github.com/mikek70/deck.js-blank[deck.js-blank]
 
 
 == Syntax (basic)

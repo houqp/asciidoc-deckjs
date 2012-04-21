@@ -7,7 +7,7 @@
         <meta name="description" content="just a template file." />
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Foo Bar" />
-        <meta name="generator" content="AsciiDoc 8.6.6" />
+        <meta name="generator" content="AsciiDoc 8.6.7" />
         <meta name="presdate" content="2011-12-16" />
         
         <!-- Core and extension CSS files -->
@@ -16,10 +16,14 @@ html {
   height: 100%;
 }
 
+body.deck-container {
+  overflow-y: auto;
+  position: static;
+}
+
 .deck-container {
   position: relative;
-  height: 100%;
-  width: 70%;
+  min-height: 100%;
   margin: 0 auto;
   padding: 0 48px;
   font-size: 16px;
@@ -36,6 +40,7 @@ html {
 }
 .touch .deck-container {
   -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
 }
 .deck-container div, .deck-container span, .deck-container object, .deck-container iframe,
 .deck-container h1, .deck-container h2, .deck-container h3, .deck-container h4, .deck-container h5, .deck-container h6, .deck-container p, .deck-container blockquote, .deck-container pre,
@@ -312,10 +317,6 @@ html {
   visibility: visible;
 }
 
-body.deck-container {
-  overflow: visible;
-}
-
 @media screen and (max-device-width: 480px) {
   /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
@@ -480,11 +481,11 @@ body.deck-container {
   padding: 0 0.5%;
 }
 .csstransforms .deck-menu > .slide {
-  -webkit-transform: scale(0.22);
-  -moz-transform: scale(0.22);
-  -o-transform: scale(0.22);
-  -ms-transform: scale(0.22);
-  transform: scale(0.22);
+  -webkit-transform: scale(0.22) !important;
+  -moz-transform: scale(0.22) !important;
+  -o-transform: scale(0.22) !important;
+  -ms-transform: scale(0.22) !important;
+  transform: scale(0.22) !important;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -o-transform-origin: 0 0;
@@ -636,7 +637,7 @@ body.deck-container .deck-status {
 @charset "UTF-8";
 .deck-container {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-  font-size: 1.25em;
+  font-size: 1.75em;
   background: #f4fafe;
   /* Old browsers */
   background: -moz-linear-gradient(top, #f4fafe 0%, #ccf0f0 100%);
@@ -658,6 +659,12 @@ body.deck-container .deck-status {
 }
 .deck-container > .slide .deck-before, .deck-container > .slide .deck-previous {
   opacity: 0.4;
+}
+.deck-container > .slide .deck-before:not(.deck-child-current) .deck-before, .deck-container > .slide .deck-before:not(.deck-child-current) .deck-previous, .deck-container > .slide .deck-previous:not(.deck-child-current) .deck-before, .deck-container > .slide .deck-previous:not(.deck-child-current) .deck-previous {
+  opacity: 1;
+}
+.deck-container > .slide .deck-child-current {
+  opacity: 1;
 }
 .deck-container .slide h1, .deck-container .slide h2, .deck-container .slide h3, .deck-container .slide h4, .deck-container .slide h5, .deck-container .slide h6 {
   font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -1499,13 +1506,19 @@ slide.
 		Every slide that does not have an id is assigned one at initialization.
 		Assigned ids take the form of hashPrefix + slideIndex, e.g., slide-0,
 		slide-12, etc.
+
+	options.preventFragmentScroll
+		When deep linking to a hash of a nested slide, this scrolls the deck
+		container to the top, undoing the natural browser behavior of scrolling
+		to the document fragment on load.
 	*/
 	$.extend(true, $[deck].defaults, {
 		selectors: {
 			hashLink: '.deck-permalink'
 		},
 
-		hashPrefix: 'slide-'
+		hashPrefix: 'slide-',
+		preventFragmentScroll: true
 	});
 
 
@@ -1570,6 +1583,12 @@ slide.
 		}
 		else {
 			goByHash(window.location.hash);
+		}
+	})
+	/* Prevent scrolling on deep links */
+	.bind('load', function() {
+		if ($[deck]('getOptions').preventFragmentScroll) {
+			$[deck]('getContainer').scrollLeft(0).scrollTop(0);
 		}
 	});
 })(jQuery, 'deck', this);
@@ -2406,6 +2425,43 @@ This module provides a support for TOC to the deck.
             }
         }
     }
+})(jQuery, 'deck');
+/*]]>*/
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+/*!
+Deck JS - deck.blank - v1.0
+Copyright (c) 2012 Mike Kellenberger
+*/
+
+/*
+This module adds the necessary methods and key bindings to blank/unblank the screen by pressing 'b'.
+*/
+(function($, deck, undefined) {
+	var $d = $(document);
+
+    $[deck]('extend', 'activateBlankScreen', function() {
+        $[deck]('getSlide').hide();
+    });
+
+    $[deck]('extend', 'deactivateBlankScreen', function() {
+        $[deck]('getSlide').show();
+    });
+
+	$[deck]('extend', 'blankScreen', function() {
+        $[deck]('getSlide').is(":visible") ? $[deck]('activateBlankScreen') : $[deck]('deactivateBlankScreen');
+    });
+
+	$d.bind('deck.init', function() {
+		// Bind key events
+		$d.unbind('keydown.blank').bind('keydown.blank', function(e) {
+			if (e.which==66) {
+				$[deck]('blankScreen');
+				e.preventDefault();
+			}
+		});
+	});
 })(jQuery, 'deck');
 /*]]>*/
 </script>
