@@ -6,18 +6,18 @@ distdir:= $(tarname)-$(version)
 all:
 	@echo -e "asciidoc-deckjs $(version)\n"
 	@echo "* issue make test to test the backend."
-	@echo "* issue make install to install deck.js dependence."
+	@echo "* issue make install-dep to install deck.js dependence."
 
 test:
 	asciidoc -b deckjs example-template.asciidoc
 	asciidoc -b deckjs tutorial-slide.asciidoc
 
-install:
+install-dep:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
 	unzip deck.js.extended.zip
 	rm deck.js.extended.zip
 
-built-deckjs:ins-deckjs ins-deckextjs
+built-deckjs:ins-deckextjs ins-deckjsblank ins-deckjs
 
 pac-deckjs:built-deckjs
 	zip -r deck.js.extended.zip deck.js
@@ -25,7 +25,6 @@ pac-deckjs:built-deckjs
 ins-deckextjs:ins-deckjs
 	curl --location https://github.com/barraq/deck.ext.js/zipball/master 2> /dev/null > deck.ext.js.zip
 	unzip deck.ext.js.zip
-	rm deck.ext.js.zip
 	mv barraq-deck.ext.js-* deckextjs
 	mv deckextjs/extensions/toc deck.js/extensions/
 	mv deckextjs/themes/style/* deck.js/themes/style/
@@ -33,8 +32,9 @@ ins-deckextjs:ins-deckjs
 	rm -rf deckextjs
 
 ins-deckjsblank:ins-deckjs
-	git clone https://github.com/mikek70/deck.js-blank.git
-	mv deck.js-blank deck.js/extensions/
+	curl --location https://github.com/mikek70/deck.js-blank/zipball/master 2> /dev/null > deck.js-blank.zip
+	unzip deck.js-blank.zip
+	mv mikek70-deck.js-blank-* deck.js/extensions/deck.js-blank
 
 ins-deckjs:
 	rm -rf ./deck.js
@@ -72,6 +72,8 @@ clean:
 	rm -rf deck.js.extended.zip
 	rm -rf $(distdir)
 	rm -rf deckjs-*.zip
+	rm -rf deck.js-blank.zip
+	rm -rf deck.ext.js.zip
 
 .PHONY: all clean test dist
 
