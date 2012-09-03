@@ -7,6 +7,7 @@ all:
 	@echo -e "asciidoc-deckjs $(version)\n"
 	@echo "* issue make test to test the backend."
 	@echo "* issue make install-dep to install deck.js dependence."
+	@echo "* issue make pac-deckjs to build the latest deck.js.extended.zip."
 
 test:
 	asciidoc -b deckjs example-template.asciidoc
