@@ -7,8 +7,8 @@
         <meta name="description" content="a tutorial for writing deck.js presentation with asciidoc" />
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Qingping Hou" />
-        <meta name="generator" content="AsciiDoc 8.6.7" />
-        <meta name="presdate" content="2012-03-29" />
+        <meta name="generator" content="AsciiDoc 8.6.6" />
+        <meta name="presdate" content="2012-11-02" />
         
         <!-- Core and extension CSS files -->
 <style type="text/css">
@@ -2447,17 +2447,95 @@ This module adds the necessary methods and key bindings to blank/unblank the scr
 })(jQuery, 'deck');
 /*]]>*/
 </script>
+<script type="text/javascript">
+/*<![CDATA[*/
+/*!
+Deck JS - deck.split
+Copyright (c) 2012 Qingping Hou <dave2008713@gmail.com>
+                   about.houqp.me
+Dual licensed under the MIT license and GPL license.
+https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
+https://github.com/imakewebthings/deck.js/blob/master/GPL-license.txt
+*/
+
+/*
+This module splits a long slide into multiple slides.
+*/
+(function($, deck, undefined) {
+	var $d = $(document);
+
+	createEmptySlide = function(title_el) {
+		slide = $(document.createElement('section'));
+		slide.addClass('slide').append(title_el.clone());
+		return slide;
+	};
+
+	$d.bind('deck.beforeInit', function() {
+		$(".slide").each( function(i, slide) {
+			/* each slide */
+			var is_split = false,
+			prev_slide = $(slide),
+			/* extract title which will be added to each new slides */
+			title_el = prev_slide.children('h2'),
+			tmp_slide = createEmptySlide(title_el);
+
+			$(slide).children().each(function() {
+				/* for each element inside original slide */
+				var el = $(this);
+
+				if (el.css('page-break-after') == 'always') {
+					if (is_split) {
+						tmp_slide.insertAfter(prev_slide);
+						prev_slide = tmp_slide;
+						tmp_slide = createEmptySlide(title_el);
+					}
+					else {
+						/* find the first page break */
+						is_split = true;
+					}
+				}
+				else {
+					if (is_split) {
+						tmp_slide.append(el);
+					}
+				}
+			})
+			/* add remaining elements to a new slides */
+			if (is_split) {
+				tmp_slide.insertAfter(prev_slide);
+			}
+		});
+	})
+})(jQuery, 'deck');
+
+/*]]>*/
+</script>
 </head>
 <body class="deck-container">
 <section class="slide" id="title-slide">
         <h1>deck.js Support for Asciidoc</h1>
         <h3>Qingping Hou</h3>
-        <h4>2012-03-29</h4>
+        <h4>2012-11-02</h4>
 </section>
 <section class="slide">
 <h2>What is deck.js?</h2>
 <p><strong>deck.js</strong> is a JavaScript library for building modern HTML presentations. <strong>deck.js</strong> is flexible enough to let advanced CSS and JavaScript authors craft highly customized decks, but also provides templates and themes for the HTML novice to build a standard slideshow.</p>
 <p>For more information, please check out its <a href="http://imakewebthings.github.com/deck.js/">project page</a>.</p>
+</section>
+<section class="slide">
+<h2>What is deck.js backend for Asciidoc?</h2>
+<p><strong>AsciiDoc-Deck.js</strong> makes it possible to write deck.js slides in my favorite markup language <strong>AsciiDoc</strong>. To make life easier, I also bundled this backend with some thirdparty deck.js extensions:</p>
+<ul>
+<li>
+<a href="https://github.com/barraq/deck.ext.js">deck.ext.js</a>
+</li>
+<li>
+<a href="https://github.com/mikek70/deck.js-blank">deck.js-blank</a>
+</li>
+<li>
+<a href="https://github.com/houqp/deck.split.js">deck.split.js</a>
+</li>
+</ul>
 </section>
 <section class="slide">
 <h2>How to generate deck.js with Asciidoc</h2>
@@ -2485,22 +2563,13 @@ jump to any slide by given number, <tt>g</tt>.
 preview all slides, <tt>m</tt>.
 </li>
 </ul>
-<p>Shortcuts from deck.js extensions:</p>
+<p>Shortcuts from deck.js&#8217;s thirdparty extensions:</p>
 <ul>
 <li>
 toggle table of content, <tt>t</tt>
 </li>
 <li>
 toggle page blank/unblank, <tt>b</tt>
-</li>
-</ul>
-<p>AsciiDoc-Deckjs includes following extensions:</p>
-<ul>
-<li>
-<a href="https://github.com/barraq/deck.ext.js">deck.ext.js</a>
-</li>
-<li>
-<a href="https://github.com/mikek70/deck.js-blank">deck.js-blank</a>
 </li>
 </ul>
 </section>
@@ -2518,6 +2587,7 @@ slides are divided by <strong>level 1</strong> sections.
 
 say whatever you want here.</tt></pre>
 </div></div>
+<div style="page-break-after:always"></div>
 <ul>
 <li>
 lists
@@ -2531,14 +2601,26 @@ lists
 </div></div>
 <ul>
 <li>
-you can choose theme and transition effect by specifying the <strong>deckjs-theme</strong> and <strong>deckjs-transition</strong> attributes:
+ordered list
 </li>
 </ul>
+<div class="literalblock">
+<div class="content">
+<pre><tt>1. entry1
+1. entry2
+1. entry3</tt></pre>
+</div></div>
+<p>A complete guide for lists can be found at <a href="http://www.methods.co.nz/asciidoc/userguide.html#X64">this page</a></p>
+</section>
+<section class="slide">
+<h2>Syntax (theming)</h2>
+<p>You can choose theme and transition effect by specifying the <strong>deckjs-theme</strong> and <strong>deckjs-transition</strong> attributes:</p>
 <div class="literalblock">
 <div class="content">
 <pre><tt>:deckjs_theme: neon
 :deckjs_transition: vertical-slide</tt></pre>
 </div></div>
+<p>Refer to <a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">boilerplate</a> for all the supported themes.</p>
 </section>
 <section class="slide">
 <h2>Syntax (nested slide)</h2>
@@ -2580,7 +2662,7 @@ this entry should be the last one
 ...........................................</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="literalblock">
+<div class="literalblock slide">
 <div class="content">
 <pre><tt>&lt;html&gt;
         &lt;head&gt;
@@ -2635,10 +2717,27 @@ int swallow_redpill () {
   ___________________________________________</tt></pre>
 </div></div>
 <p>effect:</p>
-<blockquote>
+<blockquote class="slide">
   <p>God made the natural number and all the rest is the work of man</p>
   <p><cite>-- L. Kronecker </cite></p>
 </blockquote>
+</section>
+<section class="slide">
+<h2>Syntax (split slide)</h2>
+<p>If your slide is too long, you can manually split it into multiple slides.</p>
+<p>syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>  This line will be shown in current slide.
+
+  ifdef::backend-deckjs[&lt;&lt;&lt;]
+
+  This line will be shown in next slide with the same title.</tt></pre>
+</div></div>
+<p>effect:</p>
+<p>This line will be shown in current slide.</p>
+<div style="page-break-after:always"></div>
+<p>This line will be shown in next slide with the same title.</p>
 </section>
 <section class="slide">
 <h2>Syntax (insert image)</h2>
@@ -2664,6 +2763,10 @@ int swallow_redpill () {
 </section>
 <section class="slide">
 <h2>The End</h2>
+<p>The souece code for this slide can be found here:</p>
+<p><a href="http://houqp.github.com/asciidoc-deckjs/tutorial-slide.asciidoc">http://houqp.github.com/asciidoc-deckjs/tutorial-slide.asciidoc</a></p>
+<p>You can get start with following template:</p>
+<p><a href="http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc">http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc</a></p>
 <p>That&#8217;s all. Hope you enjoy this backend. :-)</p>
 </section>
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -2684,11 +2787,17 @@ int swallow_redpill () {
 <!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-        $(function() {
+        (function($, deck, undefined) {
+
 $.deck.defaults.keys["previous"] = [8, 33, 37, 39];
 $.deck.defaults.keys["next"] = [13, 32, 34, 39];
+
+                $.extend(true, $[deck].defaults, {
+                        countNested: false
+                });
+
                 $.deck('.slide');
-        });
+        })(jQuery, 'deck');
 </script>
 </body>
 </html>

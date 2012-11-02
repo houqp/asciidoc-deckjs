@@ -37,6 +37,11 @@ deck.js Support for Asciidoc
 	from outside instead of embedding them into the output file.
 ///////////////////////
 //:linkcss:
+///////////////////////
+	Uncomment following line if you want to count each incremental
+	bullet as a new slide
+///////////////////////
+//:count_nested:
 
 == Slide One
 

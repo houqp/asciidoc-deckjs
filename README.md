@@ -18,7 +18,7 @@ Optional:
 Download the [backend package][deckjs] and use asciidoc to install:
 
 ~~~~.bash
-asciidoc --backend install deckjs-1.4.0.zip
+asciidoc --backend install deckjs-X.Y.Z.zip
 ~~~~
 
 This will install the backend to `~/asciidoc/backend/deckjs`.
@@ -39,7 +39,7 @@ By default, the `linkcss` option is disabled so all the required js and css file
 * To use without Installation, you need to specify different argument:
 
 ~~~~.bash
-asciidoc -f deck.js.conf file.asciidoc
+asciidoc -f deckjs.conf file.asciidoc
 ~~~~
 
 Make sure your asciidoc can properly find `deckjs.conf`. For asciidoc's configuration file loading strategy, please refer to [this guide][asc-conf-guide].

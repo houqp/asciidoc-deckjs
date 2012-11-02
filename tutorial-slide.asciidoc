@@ -3,8 +3,8 @@ deck.js Support for Asciidoc
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-03-29
-:revnumber: 0.5
+:revdate: 2012-11-02
+:revnumber: 0.7
 :deckjs_theme: neon
 :deckjs_transition: horizontal-slide
 :pygments:
@@ -18,6 +18,15 @@ deck.js Support for Asciidoc
 
 
 For more information, please check out its http://imakewebthings.github.com/deck.js/[project page].
+
+
+== What is deck.js backend for Asciidoc?
+
+*AsciiDoc-Deck.js* makes it possible to write deck.js slides in my favorite markup language *AsciiDoc*. To make life easier, I also bundled this backend with some thirdparty deck.js extensions:
+
+* https://github.com/barraq/deck.ext.js[deck.ext.js]
+* https://github.com/mikek70/deck.js-blank[deck.js-blank]
+* https://github.com/houqp/deck.split.js[deck.split.js]
 
 
 == How to generate deck.js with Asciidoc
@@ -46,17 +55,10 @@ Following are built-in shortcuts in deck.js:
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
 
-
-Shortcuts from deck.js extensions:
+Shortcuts from deck.js's thirdparty extensions:
 
 * toggle table of content, `t`
 * toggle page blank/unblank, `b`
-
-
-AsciiDoc-Deckjs includes following extensions:
-
-* https://github.com/barraq/deck.ext.js[deck.ext.js]
-* https://github.com/mikek70/deck.js-blank[deck.js-blank]
 
 
 == Syntax (basic)
@@ -70,6 +72,8 @@ This part assumes that you are already familiar with some basic concepts in Asci
 say whatever you want here.
 ...........................................
 
+ifdef::backend-deckjs[<<<]
+
 * lists
 
 ...........................................
@@ -78,15 +82,6 @@ say whatever you want here.
 * entry3
 ...........................................
 
-* you can choose theme and transition effect by specifying the *deckjs-theme* and *deckjs-transition* attributes:
-
-...........................................
-:deckjs_theme: neon
-:deckjs_transition: vertical-slide
-...........................................
-
-
-//////////////////////////////////////////////////////
 * ordered list
 
 ...........................................
@@ -96,7 +91,18 @@ say whatever you want here.
 ...........................................
 
 A complete guide for lists can be found at http://www.methods.co.nz/asciidoc/userguide.html#X64[this page]
-//////////////////////////////////////////////////////
+
+
+== Syntax (theming)
+
+You can choose theme and transition effect by specifying the *deckjs-theme* and *deckjs-transition* attributes:
+
+...........................................
+:deckjs_theme: neon
+:deckjs_transition: vertical-slide
+...........................................
+
+Refer to http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc[boilerplate] for all the supported themes.
 
 
 == Syntax (nested slide)
@@ -200,6 +206,29 @@ God made the natural number and all the rest is the work of man
 ___________________________________________
 
 
+
+== Syntax (split slide)
+If your slide is too long, you can manually split it into multiple slides.
+
+syntax:
+
+...........................................
+  This line will be shown in current slide.
+
+  ifdef::backend-deckjs[<<<]
+
+  This line will be shown in next slide with the same title.
+...........................................
+
+effect:
+
+This line will be shown in current slide.
+
+ifdef::backend-deckjs[<<<]
+
+This line will be shown in next slide with the same title.
+
+
 == Syntax (insert image)
 
 syntax:
@@ -229,6 +258,15 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 
 == The End
+
+The souece code for this slide can be found here:
+
+http://houqp.github.com/asciidoc-deckjs/tutorial-slide.asciidoc
+
+You can get start with following template:
+
+http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc
+
 
 That's all. Hope you enjoy this backend. :-)
 
