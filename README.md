@@ -18,7 +18,7 @@ Optional:
 Download the [backend package][deckjs] and use asciidoc to install:
 
 ~~~~.bash
-asciidoc --backend install deckjs-1.4.0.zip
+asciidoc --backend install deckjs-X.Y.Z.zip
 ~~~~
 
 This will install the backend to `~/asciidoc/backend/deckjs`.
