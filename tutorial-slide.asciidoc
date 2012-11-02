@@ -36,7 +36,7 @@ First, make sure you have at least asciidoc-8.6.6 installed and download this ba
 Then install the backend:
 
 ...........................................
-asciidoc --backend install deckjs-1.2.zip
+asciidoc --backend install deckjs-X.Y.Z.zip
 ...........................................
 
 After the installation, it's just as simple as issuing following command:
