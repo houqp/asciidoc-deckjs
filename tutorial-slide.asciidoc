@@ -46,6 +46,7 @@ Following are built-in shortcuts in deck.js:
 * jump to any slide by given number, `g`.
 * preview all slides, `m`.
 
+ifdef::backend-deckjs[<<<]
 
 Shortcuts from deck.js extensions:
 
@@ -53,7 +54,7 @@ Shortcuts from deck.js extensions:
 * toggle page blank/unblank, `b`
 
 
-AsciiDoc-Deckjs includes following extensions:
+AsciiDoc-Deckjs includes following thirdparty extensions:
 
 * https://github.com/barraq/deck.ext.js[deck.ext.js]
 * https://github.com/mikek70/deck.js-blank[deck.js-blank]
@@ -198,6 +199,29 @@ effect:
 ___________________________________________
 God made the natural number and all the rest is the work of man
 ___________________________________________
+
+
+
+== Syntax (split slide)
+If your slide is too long, you can manually split it into multiple slides.
+
+syntax:
+
+...........................................
+  This line will be shown in current slide.
+
+  ifdef::backend-deckjs[<<<]
+
+  This line will be shown in next slide with the same title.
+...........................................
+
+effect:
+
+This line will be shown in current slide.
+
+ifdef::backend-deckjs[<<<]
+
+This line will be shown in next slide with the same title.
 
 
 == Syntax (insert image)

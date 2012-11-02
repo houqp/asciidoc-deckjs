@@ -18,13 +18,13 @@ install-dep:
 	unzip deck.js.extended.zip
 	rm deck.js.extended.zip
 
-built-deckjs:ins-deckextjs ins-deckjsblank ins-deckjs
+built-deckjs:ins-deckextjs ins-deckjsblank ins-deckjs ins-decksplitjs
 
 pac-deckjs:built-deckjs
 	zip -r deck.js.extended.zip deck.js
 
 ins-deckextjs:ins-deckjs
-	curl --location https://github.com/barraq/deck.ext.js/zipball/master 2> /dev/null > deck.ext.js.zip
+	wget https://github.com/barraq/deck.ext.js/zipball/master -O deck.ext.js.zip 2> /dev/null
 	unzip deck.ext.js.zip
 	mv barraq-deck.ext.js-* deckextjs
 	mv deckextjs/extensions/toc deck.js/extensions/
@@ -33,13 +33,18 @@ ins-deckextjs:ins-deckjs
 	rm -rf deckextjs
 
 ins-deckjsblank:ins-deckjs
-	curl --location https://github.com/mikek70/deck.js-blank/zipball/master 2> /dev/null > deck.js-blank.zip
+	wget https://github.com/mikek70/deck.js-blank/zipball/master -O deck.js-blank.zip 2> /dev/null
 	unzip deck.js-blank.zip
 	mv mikek70-deck.js-blank-* deck.js/extensions/deck.js-blank
 
+ins-decksplitjs:ins-deckjs
+	wget https://github.com/houqp/deck.split.js/zipball/master -O deck.split.js.zip 2> /dev/null
+	unzip deck.split.js.zip
+	mv houqp-deck.split.js-* deck.js/extensions/split
+
 ins-deckjs:
 	rm -rf ./deck.js
-	curl --location https://github.com/imakewebthings/deck.js/zipball/stable 2> /dev/null > deck.js.zip
+	wget https://github.com/imakewebthings/deck.js/zipball/stable -O deck.js.zip 2> /dev/null
 	unzip deck.js.zip
 	rm deck.js.zip
 	mv imakewebthings-deck.js-* deck.js
