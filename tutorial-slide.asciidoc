@@ -42,7 +42,7 @@ asciidoc --backend install deckjs-X.Y.Z.zip
 After the installation, it's just as simple as issuing following command:
 
 ...........................................
-asciidoc -b deckjs.conf file.asciidoc
+asciidoc -b deckjs file.asciidoc
 ...........................................
 
 You can also use this backend without installation, please refer to https://github.com/houqp/asciidoc-deckjs/blob/master/README.md[README] for details.
