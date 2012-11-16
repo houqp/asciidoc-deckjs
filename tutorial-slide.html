@@ -7,7 +7,7 @@
         <meta name="description" content="a tutorial for writing deck.js presentation with asciidoc" />
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Qingping Hou" />
-        <meta name="generator" content="AsciiDoc 8.6.6" />
+        <meta name="generator" content="AsciiDoc 8.6.8" />
         <meta name="presdate" content="2012-11-02" />
         
         <!-- Core and extension CSS files -->
@@ -2447,69 +2447,6 @@ This module adds the necessary methods and key bindings to blank/unblank the scr
 })(jQuery, 'deck');
 /*]]>*/
 </script>
-<script type="text/javascript">
-/*<![CDATA[*/
-/*!
-Deck JS - deck.split
-Copyright (c) 2012 Qingping Hou <dave2008713@gmail.com>
-                   about.houqp.me
-Dual licensed under the MIT license and GPL license.
-https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
-https://github.com/imakewebthings/deck.js/blob/master/GPL-license.txt
-*/
-
-/*
-This module splits a long slide into multiple slides.
-*/
-(function($, deck, undefined) {
-	var $d = $(document);
-
-	createEmptySlide = function(title_el) {
-		slide = $(document.createElement('section'));
-		slide.addClass('slide').append(title_el.clone());
-		return slide;
-	};
-
-	$d.bind('deck.beforeInit', function() {
-		$(".slide").each( function(i, slide) {
-			/* each slide */
-			var is_split = false,
-			prev_slide = $(slide),
-			/* extract title which will be added to each new slides */
-			title_el = prev_slide.children('h2'),
-			tmp_slide = createEmptySlide(title_el);
-
-			$(slide).children().each(function() {
-				/* for each element inside original slide */
-				var el = $(this);
-
-				if (el.css('page-break-after') == 'always') {
-					if (is_split) {
-						tmp_slide.insertAfter(prev_slide);
-						prev_slide = tmp_slide;
-						tmp_slide = createEmptySlide(title_el);
-					}
-					else {
-						/* find the first page break */
-						is_split = true;
-					}
-				}
-				else {
-					if (is_split) {
-						tmp_slide.append(el);
-					}
-				}
-			})
-			/* add remaining elements to a new slides */
-			if (is_split) {
-				tmp_slide.insertAfter(prev_slide);
-			}
-		});
-	})
-})(jQuery, 'deck');
-
-/*]]>*/
-</script>
 </head>
 <body class="deck-container">
 <section class="slide" id="title-slide">
@@ -2548,7 +2485,7 @@ This module splits a long slide into multiple slides.
 <p>After the installation, it&#8217;s just as simple as issuing following command:</p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>asciidoc -b deckjs.conf file.asciidoc</tt></pre>
+<pre><tt>asciidoc -b deckjs file.asciidoc</tt></pre>
 </div></div>
 <p>You can also use this backend without installation, please refer to <a href="https://github.com/houqp/asciidoc-deckjs/blob/master/README.md">README</a> for details.</p>
 </section>
@@ -2557,19 +2494,19 @@ This module splits a long slide into multiple slides.
 <p>Following are built-in shortcuts in deck.js:</p>
 <ul>
 <li>
-jump to any slide by given number, <tt>g</tt>.
+jump to any slide by given number, <code>g</code>.
 </li>
 <li>
-preview all slides, <tt>m</tt>.
+preview all slides, <code>m</code>.
 </li>
 </ul>
 <p>Shortcuts from deck.js&#8217;s thirdparty extensions:</p>
 <ul>
 <li>
-toggle table of content, <tt>t</tt>
+toggle table of content, <code>t</code>
 </li>
 <li>
-toggle page blank/unblank, <tt>b</tt>
+toggle page blank/unblank, <code>b</code>
 </li>
 </ul>
 </section>
@@ -2662,7 +2599,7 @@ this entry should be the last one
 ...........................................</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="literalblock slide">
+<div class="literalblock">
 <div class="content">
 <pre><tt>&lt;html&gt;
         &lt;head&gt;
@@ -2717,7 +2654,7 @@ int swallow_redpill () {
   ___________________________________________</tt></pre>
 </div></div>
 <p>effect:</p>
-<blockquote class="slide">
+<blockquote>
   <p>God made the natural number and all the rest is the work of man</p>
   <p><cite>-- L. Kronecker </cite></p>
 </blockquote>
@@ -2787,17 +2724,11 @@ int swallow_redpill () {
 <!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-        (function($, deck, undefined) {
-
+        $(function() {
 $.deck.defaults.keys["previous"] = [8, 33, 37, 39];
 $.deck.defaults.keys["next"] = [13, 32, 34, 39];
-
-                $.extend(true, $[deck].defaults, {
-                        countNested: false
-                });
-
                 $.deck('.slide');
-        })(jQuery, 'deck');
+        });
 </script>
 </body>
 </html>
