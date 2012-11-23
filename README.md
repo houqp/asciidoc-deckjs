@@ -21,7 +21,7 @@ Download the [backend package][deckjs] and use asciidoc to install:
 asciidoc --backend install deckjs-X.Y.Z.zip
 ~~~~
 
-This will install the backend to `~/asciidoc/backend/deckjs`.
+This will install the backend to `~/.asciidoc/backend/deckjs`.
 
 You can also use this backend without installation, see the next section.
 
