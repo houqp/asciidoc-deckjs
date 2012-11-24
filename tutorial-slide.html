@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=1024, user-scalable=no">
         <meta name="author" content="Qingping Hou" />
         <meta name="generator" content="AsciiDoc 8.6.8" />
-        <meta name="presdate" content="2012-11-02" />
+        <meta name="presdate" content="2012-11-24" />
         
         <!-- Core and extension CSS files -->
 <style type="text/css">
@@ -2515,7 +2515,7 @@ This module splits a long slide into multiple slides.
 <section class="slide" id="title-slide">
         <h1>deck.js Support for Asciidoc</h1>
         <h3>Qingping Hou</h3>
-        <h4>2012-11-02</h4>
+        <h4>2012-11-24</h4>
 </section>
 <section class="slide">
 <h2>What is deck.js?</h2>
@@ -2526,13 +2526,13 @@ This module splits a long slide into multiple slides.
 <h2>What is deck.js backend for Asciidoc?</h2>
 <p><strong>AsciiDoc-Deck.js</strong> makes it possible to write deck.js slides in my favorite markup language <strong>AsciiDoc</strong>. To make life easier, I also bundled this backend with some thirdparty deck.js extensions:</p>
 <ul>
-<li>
+<li class="">
 <a href="https://github.com/barraq/deck.ext.js">deck.ext.js</a>
 </li>
-<li>
+<li class="">
 <a href="https://github.com/mikek70/deck.js-blank">deck.js-blank</a>
 </li>
-<li>
+<li class="">
 <a href="https://github.com/houqp/deck.split.js">deck.split.js</a>
 </li>
 </ul>
@@ -2556,19 +2556,19 @@ This module splits a long slide into multiple slides.
 <h2>Shortcuts</h2>
 <p>Following are built-in shortcuts in deck.js:</p>
 <ul>
-<li>
+<li class="">
 jump to any slide by given number, <code>g</code>.
 </li>
-<li>
+<li class="">
 preview all slides, <code>m</code>.
 </li>
 </ul>
 <p>Shortcuts from deck.js&#8217;s thirdparty extensions:</p>
 <ul>
-<li>
+<li class="">
 toggle table of content, <code>t</code>
 </li>
-<li>
+<li class="">
 toggle page blank/unblank, <code>b</code>
 </li>
 </ul>
@@ -2577,7 +2577,7 @@ toggle page blank/unblank, <code>b</code>
 <h2>Syntax (basic)</h2>
 <p>This part assumes that you are already familiar with some basic concepts in AsciiDoc.</p>
 <ul>
-<li>
+<li class="">
 slides are divided by <strong>level 1</strong> sections.
 </li>
 </ul>
@@ -2589,7 +2589,7 @@ say whatever you want here.</tt></pre>
 </div></div>
 <div style="page-break-after:always"></div>
 <ul>
-<li>
+<li class="">
 lists
 </li>
 </ul>
@@ -2600,7 +2600,7 @@ lists
 * entry3</tt></pre>
 </div></div>
 <ul>
-<li>
+<li class="">
 ordered list
 </li>
 </ul>
@@ -2624,24 +2624,24 @@ ordered list
 </section>
 <section class="slide">
 <h2>Syntax (nested slide)</h2>
-<p>Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements marked by <strong>incrementa</strong> option will be paused before show up.</p>
+<p>Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements that given <strong>incremental</strong> attribute will be paused before show up.</p>
 <p>syntax:</p>
 <div class="literalblock">
 <div class="content">
-<pre><tt>[options="incremental"]
-* this entry should be the first to show up
+<pre><tt>[incremental="true"]
+* this entry should show up first
 * this entry should show up following the first one
 * this entry should be the last one</tt></pre>
 </div></div>
 <p>effect:</p>
 <ul>
-<li class="slide">
-this entry should be the first to show up
+<li class=" slide">
+this entry should show up first
 </li>
-<li class="slide">
+<li class=" slide">
 this entry should show up following the first one
 </li>
-<li class="slide">
+<li class=" slide">
 this entry should be the last one
 </li>
 </ul>
@@ -2662,7 +2662,7 @@ this entry should be the last one
 ...........................................</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="literalblock">
+<div class="literalblock slide">
 <div class="content">
 <pre><tt>&lt;html&gt;
         &lt;head&gt;
@@ -2717,7 +2717,7 @@ int swallow_redpill () {
   ___________________________________________</tt></pre>
 </div></div>
 <p>effect:</p>
-<blockquote>
+<blockquote class="slide ">
   <p>God made the natural number and all the rest is the work of man</p>
   <p><cite>-- L. Kronecker </cite></p>
 </blockquote>
@@ -2747,7 +2747,7 @@ int swallow_redpill () {
 <pre><tt>image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]</tt></pre>
 </div></div>
 <p>effect:</p>
-<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" alt="http://www.gnu.org/graphics/gnu-head-sm.jpg"  class="slide"/>
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" alt="http://www.gnu.org/graphics/gnu-head-sm.jpg" class="slide"/>
 </section>
 <section class="slide">
 <h2>Syntax (insert video)</h2>
@@ -2757,7 +2757,7 @@ int swallow_redpill () {
 <pre><tt>video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]</tt></pre>
 </div></div>
 <p>effect:</p>
-<div class="slide">
+<div class="slide ">
 <iframe width="420" height="315" src="http://www.youtube.com/embed/GP3zvc2dG5Y" frameborder="0" allowfullscreen></iframe>
 </div>
 </section>

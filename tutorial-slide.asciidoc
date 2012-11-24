@@ -3,8 +3,8 @@ deck.js Support for Asciidoc
 :author: Qingping Hou 
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-11-02
-:revnumber: 0.7
+:revdate: 2012-11-24
+:revnumber: 0.9
 :deckjs_theme: neon
 :deckjs_transition: horizontal-slide
 :pygments:
@@ -107,23 +107,23 @@ Refer to http://houqp.github.com/asciidoc-deckjs/example-template.asciidoc[boile
 
 == Syntax (nested slide)
 
-Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements marked by *incrementa* option will be paused before show up.
+Nested slide (or subslide) give you the ability to create substeps in slides. In this backend, elements that given *incremental* attribute will be paused before show up.
 
 syntax:
 
 ...........................................
-[options="incremental"]
-* this entry should be the first to show up
+[incremental="true"]
+* this entry should show up first
 * this entry should show up following the first one
 * this entry should be the last one
 ...........................................
 
 effect:
 
-[options="incremental"]
-* this entry should be the first to show up
+[incremental="true"]
+* this entry should show up first
 * this entry should show up following the first one
-* this entry should be the last one 
+* this entry should be the last one
 
 
 == Syntax (literal block)
@@ -141,7 +141,7 @@ syntax:
 
 effect:
 
-[options="incremental"]
+[incremental="true"]
 ...........................................
 <html>
 	<head>
@@ -171,7 +171,7 @@ int swallow_redpill () {
 
 effect:
 
-[options="incremental"]
+[incremental="true"]
 [source,c,numbered]
 -------------------------------------------
 int swallow_redpill () {
@@ -199,7 +199,7 @@ syntax:
 
 effect:
 
-[options="incremental"]
+[incremental="true"]
 [quote, L. Kronecker]
 ___________________________________________
 God made the natural number and all the rest is the work of man
@@ -239,7 +239,7 @@ image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Texinfo"]
 
 effect:
 
-[options="incremental"]
+[incremental="true"]
 image::http://www.gnu.org/graphics/gnu-head-sm.jpg[title="Levitating GNU"]
 
 
@@ -253,7 +253,7 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 effect:
 
-[options="incremental"]
+[incremental="true"]
 video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 
