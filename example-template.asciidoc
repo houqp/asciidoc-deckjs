@@ -45,7 +45,7 @@ deck.js Support for Asciidoc
 
 == Slide One
 
-[options="incremental"]
+[incremental="true"]
  * item 1
  * item 2
 
