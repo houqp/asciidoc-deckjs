@@ -10,8 +10,8 @@ all:
 	@echo "* issue make pac-deckjs to build the latest deck.js.extended.zip."
 
 test:
-	asciidoc -b deckjs example-template.asciidoc
-	asciidoc -b deckjs tutorial-slide.asciidoc
+	asciidoc -f deckjs.conf example-template.asciidoc
+	asciidoc -f deckjs.conf tutorial-slide.asciidoc
 
 install-dep:
 	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
