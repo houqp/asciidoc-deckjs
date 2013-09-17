@@ -70,7 +70,7 @@ check:
 	git checkout gh-pages tutorial-slide.asciidoc
 	git checkout gh-pages example-template.asciidoc
 
-clean: 
+clean:
 	rm -rf example-template.html
 	rm -rf tutorial-slide.html
 	rm -rf deck.js.zip deck.js
@@ -80,6 +80,7 @@ clean:
 	rm -rf deckjs-*.zip
 	rm -rf deck.js-blank.zip
 	rm -rf deck.ext.js.zip
+	rm -rf deck.split.js.zip
 
 .PHONY: all clean test dist
 
