@@ -1,9 +1,9 @@
 deck.js Support for Asciidoc
 =============================
-:author: Qingping Hou 
+:author: Qingping Hou
 :email: <dave2008713@gmail.com>
 :description: a tutorial for writing deck.js presentation with asciidoc
-:revdate: 2012-11-24
+:revdate: 2014-06-30
 :revnumber: 0.9
 :deckjs_theme: neon
 :deckjs_transition: horizontal-slide
@@ -161,7 +161,7 @@ syntax:
 [source,c,numbered]
 -------------------------------------------
 int swallow_redpill () {
- unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3"; 
+ unsigned char m[2+4], rpill[] = "\x0f\x01\x0d\x00\x00\x00\x00\xc3";
  *((unsigned*)&rpill[3]) = (unsigned)m;
  ((void(*)())&rpill)();
  return (m[5]>0xd0) ? 1 : 0;
