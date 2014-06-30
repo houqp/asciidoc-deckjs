@@ -14,7 +14,7 @@ test:
 	asciidoc -f deckjs.conf tutorial-slide.asciidoc
 
 install-dep:
-	wget https://github.com/downloads/houqp/asciidoc-deckjs/deck.js.extended.zip
+	wget https://github.com/houqp/asciidoc-deckjs/releases/download/v1.6.3/deck.js.extended.zip
 	unzip deck.js.extended.zip
 	rm deck.js.extended.zip
 
