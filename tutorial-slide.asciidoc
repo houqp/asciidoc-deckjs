@@ -259,7 +259,7 @@ video::http://www.youtube.com/embed/GP3zvc2dG5Y[width="420", height="315"]
 
 == The End
 
-The souece code for this slide can be found here:
+The source code for this slide can be found here:
 
 http://houqp.github.com/asciidoc-deckjs/tutorial-slide.asciidoc
 
