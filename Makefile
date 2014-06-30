@@ -44,10 +44,10 @@ ins-decksplitjs:ins-deckjs
 
 ins-deckjs:
 	rm -rf ./deck.js
-	wget https://github.com/imakewebthings/deck.js/zipball/stable -O deck.js.zip 2> /dev/null
+	wget https://github.com/imakewebthings/deck.js/archive/1.1.0.zip -O deck.js.zip 2> /dev/null
 	unzip deck.js.zip
 	rm deck.js.zip
-	mv imakewebthings-deck.js-* deck.js
+	mv deck.js-* deck.js
 
 dist:$(distdir).zip
 
